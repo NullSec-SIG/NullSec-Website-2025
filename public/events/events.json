@@ -1,0 +1,58 @@
+[
+    {
+        "name": "NullFlow Part 1",
+        "image": "nullflow_1.png",
+        "date": "8 May 2025",
+        "time": "",
+        "status": "past"
+    },
+    {
+        "name": "Intro to Kali Linux",
+        "image": "kali.png",
+        "date": "15 May 2025",
+        "time": "",
+        "status": "past"
+    },
+    {
+        "name": "NullFlow Part 2",
+        "image": "nullflow_2.png",
+        "date": "16 May 2025",
+        "time": "",
+        "status": "past"
+    },
+    {
+        "name": "Intro to Web Security",
+        "image": "web_security.png",
+        "date": "29 May 2025",
+        "time": "",
+        "status": "past"
+    },
+    {
+        "name": "Pwn: Zero to Hero",
+        "image": "pwn.png",
+        "date": "30 July 2025",
+        "time": "",
+        "status": "past"
+    },
+    {
+        "name": "Intro to Cryptography",
+        "image": "crypto.png",
+        "date": "27 Nov 2025",
+        "time": "",
+        "status": "upcoming"
+    },
+    {
+        "name": "Introduction to C + Rev",
+        "image": "c_rev.png",
+        "date": "8 Jan 2026",
+        "time": "",
+        "status": "upcoming"
+    },
+    {
+        "name": "Game Hacking",
+        "image": "game_hacking.png",
+        "date": "14 Jan 2026",
+        "time": "",
+        "status": "upcoming"
+    }
+]
