@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: "CommitMono";
+    src: url("/CommitMono-400-Regular.otf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "CommitMono";
+    src: url("/CommitMono-700-Regular.otf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "IBMPlexSans";
+    src: url("/IBMPlexSans-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "IBMPlexSans";
+    src: url("/IBMPlexSans-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.40) 100%), #022B3A;
+  color: white;
+  font-family: "CommitMono", sans-serif
+}
