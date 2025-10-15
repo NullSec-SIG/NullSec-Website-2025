@@ -19,17 +19,17 @@ export default function AboutPage() {
                     <div className="flex flex-row justify-center items-center gap-15">
                         <TeamCard name="TAN CHIN RAY" role="Head of Technology" picture="/team/Chin Ray.png" description="" />
                         <TeamCard name="TAN JUN WEI" role="Tech EXCO" picture="/team/Jun Wei.jpg" description="" />
-                        <TeamCard name="DAMIAN KOH" role="Vice-President" picture="/team/Damian.png" description="" />
+                        <TeamCard name="DAMIAN KOH" role="Tech EXCO" picture="/team/Damian.jpg" description="" />
                     </div>
                     <div className="flex flex-row justify-center items-center gap-15">
                         <TeamCard name="QUAN YU" role="Head of SecOps" picture="/team/Quan Yu.jpg" description="" />
-                        <TeamCard name="RYAN TAN" role="SecOps EXCO" picture="/team/Ryan Tan.png" description="" />
+                        <TeamCard name="RYAN TAN" role="SecOps EXCO" picture="/team/Ryan Tan.jpg" description="" />
                         <TeamCard name="RYAN LOW" role="SecOps EXCO" picture="/team/Ryan Low.jpg" description="" />
                     </div>
                     <div className="flex flex-row justify-center items-center gap-15">
-                        <TeamCard name="ALOYSIUS LUKE TAY SHI YUAN" role="Head of Publicity" picture="/team/Aloysius.png" description="" />
-                        <TeamCard name="RYAN WEE WEI YAN" role="Publicity EXCO" picture="/team/Chin Ray.png" description="" />
-                        <TeamCard name="POOK XUAN TONG" role="Publicity EXCO" picture="/team/Chin Ray.png" description="" />
+                        <TeamCard name="ALOYSIUS LUKE TAY SHI YUAN" role="Head of Publicity" picture="/team/Aloysius.jpg" description="" />
+                        <TeamCard name="RYAN WEE WEI YAN" role="Publicity EXCO" picture="/team/Ryan Wee.jpg" description="" />
+                        <TeamCard name="POOK XUAN TONG" role="Publicity EXCO" picture="/team/Xuan Tong.jpg" description="" />
                         <TeamCard name="KOH BOCK CHOW" role="Publicity EXCO" picture="/team/Chin Ray.png" description="" />
                     </div>
                 </div>

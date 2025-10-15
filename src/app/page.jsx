@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion, useMotionValueEvent, useScroll, useTransform } from "motion/react"
 import { useEffect, useRef, useState } from "react";
+import WorkshopCard from "./components/workshopCard";
 
 export default function Home() {
     const { scrollY } = useScroll();
@@ -45,15 +46,20 @@ export default function Home() {
 `
 
     useMotionValueEvent(scrollY, "change", (current => {
-        console.log(current)
         return setIsVisible(current <= 400)
     }))
 
     const past = useRef();
     const upcoming = useRef();
-    
+
+    const [workshops, setWorkshops] = useState([]);
+
     useEffect(() => {
-        // JSON.parse()
+        const fetchData = async () => {
+            const response = await fetch("/events/events.json")
+            setWorkshops(await response.json())
+        }
+        fetchData()
     }, [past, upcoming])
 
     return (
@@ -98,18 +104,13 @@ export default function Home() {
                         </div>
                     </div>
                     <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ amount: 0.5 }} className="flex justify-between flex-wrap w-full h-full mt-10 gap-10">
-                        <div className="bg-red-100 w-[384px] h-[384px]">
-
-                        </div>
-                        <div className="bg-red-100 w-[384px] h-[384px]">
-
-                        </div>
-                        <div className="bg-red-100 w-[384px] h-[384px]">
-
-                        </div>
-                        <div className="bg-red-100 w-[384px] h-[384px]">
-
-                        </div>
+                        {
+                            workshops && workshops.map((workshop) => {
+                                return (
+                                    <WorkshopCard key={workshop.name} name={workshop.name} image={workshop.image} date={workshop.date} time={workshop.time} status={workshop.status} />
+                                )
+                            })
+                        }
                     </motion.div>
                 </div>
             </div>

@@ -1,35 +1,35 @@
 [
     {
         "name": "NullFlow Part 1",
-        "image": "nullflow_1.png",
+        "image": "nullflow_1.jpg",
         "date": "8 May 2025",
         "time": "",
         "status": "past"
     },
     {
         "name": "Intro to Kali Linux",
-        "image": "kali.png",
+        "image": "kali.jpg",
         "date": "15 May 2025",
         "time": "",
         "status": "past"
     },
     {
         "name": "NullFlow Part 2",
-        "image": "nullflow_2.png",
+        "image": "nullflow_2.jpg",
         "date": "16 May 2025",
         "time": "",
         "status": "past"
     },
     {
         "name": "Intro to Web Security",
-        "image": "web_security.png",
+        "image": "web_security.jpg",
         "date": "29 May 2025",
         "time": "",
         "status": "past"
     },
     {
         "name": "Pwn: Zero to Hero",
-        "image": "pwn.png",
+        "image": "pwn.jpg",
         "date": "30 July 2025",
         "time": "",
         "status": "past"
