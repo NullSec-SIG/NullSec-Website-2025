@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion, useMotionValueEvent, useScroll, useTransform } from "motion/react"
 import { useEffect, useRef, useState } from "react";
 import WorkshopCard from "./components/workshopCard";
+import { animate } from "motion";
 
 export default function Home() {
     const { scrollY } = useScroll();
@@ -49,18 +50,28 @@ export default function Home() {
         return setIsVisible(current <= 400)
     }))
 
-    const past = useRef();
-    const upcoming = useRef();
-
+    const [rawWorkshops, setRawWorkshops] = useState([]);
     const [workshops, setWorkshops] = useState([]);
 
     useEffect(() => {
-        const fetchData = async () => {
-            const response = await fetch("/events/events.json")
-            setWorkshops(await response.json())
+        const fetchData = () => {
+            fetch("/events/events.json")
+                .then(response => response.json())
+                .then(result => {
+                    setRawWorkshops(result)
+                    setWorkshops(result)
+                })
         }
         fetchData()
-    }, [past, upcoming])
+    }, [])
+
+    useEffect(() => {
+        setWorkshops(rawWorkshops.filter((event) => {
+            if (!pastChecked && !upcomingChecked || pastChecked && upcomingChecked) return event
+            else if (pastChecked) return event.status === "past" ? event : null
+            else return event.status === "upcoming" ? event : null
+        }))
+    }, [pastChecked, upcomingChecked])
 
     return (
         <div className="px-6 min-h-full flex-1">
@@ -68,7 +79,7 @@ export default function Home() {
                 {/* <Image src="/Logo ASCII.svg" width={644} height={968} alt="logo-ascii" /> */}
                 {ascii.split("\n").map((line, i) => {
                     return (
-                        <motion.pre key={i} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.05, delay: i * 0.05 }} className="font-[CommitMono] font-bold 3xl:text-xl/5 xl:text-xl/5 lg:text-lg/5 md:text-md/4 text-sm/4 text-[#BFDBF7] ">
+                        <motion.pre key={i} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.05, delay: i * 0.05 }} className="font-[CommitMono] font-bold 2xl:text-lg/4 text-xs/3 text-[#BFDBF7] ">
                             {line}
                         </motion.pre>
                     )
@@ -79,7 +90,7 @@ export default function Home() {
                 </div>
                 <h2 className="font-[IBMPlexSans] lg:text-2xl md:text-xl text-md text-center mt-8">The Cybersecurity Special Interest Group of Ngee Ann Polytechnic.</h2>
 
-                <motion.div animate={{ opacity: isVisible ? 1 : 0 }} className="absolute bottom-10 flex flex-col justify-center items-center">
+                <motion.div animate={{ opacity: isVisible ? 1 : 0 }} className="absolute bottom-6 flex flex-col justify-center items-center">
                     <svg width={30} height={30} className="fill-gray-400 animate-bounce">
                         <path d="M15 23.75L7.5 16.25L9.25 14.5L15 20.2188L20.75 14.5L22.5 16.25L15 23.75ZM15 16.25L7.5 8.75L9.25 7L15 12.7188L20.75 7L22.5 8.75L15 16.25Z" />
                     </svg>
@@ -97,13 +108,13 @@ export default function Home() {
                             <label htmlFor="past" className="text-center px-5 text-lg border-r-2 peer-checked/past:bg-[#04AF9B] transition-all duration-100">
                                 PAST
                             </label>
-                            <input id="upcoming" className="text-lg text-center sr-only peer/upcoming" type="checkbox" onChange={(e) => setUpcomingChecked(e.target.value)} />
+                            <input id="upcoming" className="text-lg text-center sr-only peer/upcoming" type="checkbox" onChange={(e) => setUpcomingChecked(e.target.checked)} />
                             <label htmlFor="upcoming" className="text-center px-5 text-lg peer-checked/upcoming:bg-[#04AF9B] transition-all duration-100">
                                 UPCOMING
                             </label>
                         </div>
                     </div>
-                    <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ amount: 0.5 }} className="flex justify-between flex-wrap w-full h-full mt-10 gap-10">
+                    <motion.div className="flex justify-between flex-wrap w-full h-full mt-10 mb-20 gap-10">
                         {
                             workshops && workshops.map((workshop) => {
                                 return (
