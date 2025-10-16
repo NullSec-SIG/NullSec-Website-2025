@@ -4,7 +4,6 @@ import Image from "next/image";
 import { motion, useMotionValueEvent, useScroll, useTransform } from "motion/react"
 import { useEffect, useRef, useState } from "react";
 import WorkshopCard from "./components/workshopCard";
-import { animate } from "motion";
 
 export default function Home() {
     const { scrollY } = useScroll();
@@ -58,6 +57,7 @@ export default function Home() {
             fetch("/events/events.json")
                 .then(response => response.json())
                 .then(result => {
+                    result.reverse()
                     setRawWorkshops(result)
                     setWorkshops(result)
                 })
@@ -67,7 +67,7 @@ export default function Home() {
 
     useEffect(() => {
         setWorkshops(rawWorkshops.filter((event) => {
-            if (!pastChecked && !upcomingChecked || pastChecked && upcomingChecked) return event
+            if (!pastChecked && !upcomingChecked) return event
             else if (pastChecked) return event.status === "past" ? event : null
             else return event.status === "upcoming" ? event : null
         }))
@@ -79,7 +79,7 @@ export default function Home() {
                 {/* <Image src="/Logo ASCII.svg" width={644} height={968} alt="logo-ascii" /> */}
                 {ascii.split("\n").map((line, i) => {
                     return (
-                        <motion.pre key={i} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.05, delay: i * 0.05 }} className="font-[CommitMono] font-bold 2xl:text-lg/4 text-xs/3 text-[#BFDBF7] ">
+                        <motion.pre key={i} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.05, delay: i * 0.05 }} className="font-[CommitMono] font-bold 2xl:text-lg/4 text-xs/3 text-[#BFDBF7] animate-pulse">
                             {line}
                         </motion.pre>
                     )
@@ -104,11 +104,11 @@ export default function Home() {
                     <div className="flex flex-row items-center whitespace-pre select-none">
                         <h3 className="text-2xl">FILTER: </h3>
                         <div className="grid grid-cols-2 auto-cols-max border-white border-2 overflow-clip rounded-3xl">
-                            <input id="past" checked={pastChecked} className="text-lg text-center sr-only peer/past" type="checkbox" onChange={(e) => setPastChecked(e.target.checked)} />
+                            <input id="past" checked={pastChecked} className="text-lg text-center sr-only peer/past" type="checkbox" onChange={(e) => { setPastChecked(e.target.checked); e.target.checked & setUpcomingChecked(false) }} />
                             <label htmlFor="past" className="text-center px-5 text-lg border-r-2 peer-checked/past:bg-[#04AF9B] transition-all duration-100">
                                 PAST
                             </label>
-                            <input id="upcoming" className="text-lg text-center sr-only peer/upcoming" type="checkbox" onChange={(e) => setUpcomingChecked(e.target.checked)} />
+                            <input id="upcoming" checked={upcomingChecked} className="text-lg text-center sr-only peer/upcoming" type="checkbox" onChange={(e) => { setUpcomingChecked(e.target.checked); e.target.checked & setPastChecked(false) }} />
                             <label htmlFor="upcoming" className="text-center px-5 text-lg peer-checked/upcoming:bg-[#04AF9B] transition-all duration-100">
                                 UPCOMING
                             </label>
@@ -117,9 +117,7 @@ export default function Home() {
                     <motion.div className="flex justify-between flex-wrap w-full h-full mt-10 mb-20 gap-10">
                         {
                             workshops && workshops.map((workshop) => {
-                                return (
-                                    <WorkshopCard key={workshop.name} name={workshop.name} image={workshop.image} date={workshop.date} time={workshop.time} status={workshop.status} />
-                                )
+                                return <WorkshopCard key={workshop.name} name={workshop.name} image={workshop.image} date={workshop.date} time={workshop.time} status={workshop.status} description={workshop.description} location={workshop.location} />
                             })
                         }
                     </motion.div>

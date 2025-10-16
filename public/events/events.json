@@ -3,56 +3,69 @@
         "name": "NullFlow Part 1",
         "image": "nullflow_1.jpg",
         "date": "8 May 2025",
-        "time": "",
-        "status": "past"
+        "time": "6.30pm - 8.30pm",
+        "status": "past",
+        "location": "27-05-11",
+        "description": "Learn about web development in vanilla HTML and CSS!"
     },
     {
         "name": "Intro to Kali Linux",
         "image": "kali.jpg",
         "date": "15 May 2025",
-        "time": "",
-        "status": "past"
+        "time": "6pm - 8pm",
+        "status": "past",
+        "location": "LT79",
+        "description": "Learn about the basics of Linux CLI with a pentester's distribution of choice."
     },
     {
         "name": "NullFlow Part 2",
         "image": "nullflow_2.jpg",
         "date": "16 May 2025",
-        "time": "",
-        "status": "past"
+        "time": "5.30pm - 7.30pm",
+        "status": "past",
+        "location": "27-05-11",
+        "description": "Continue learning about web development in vanilla JS, and learn about the importance of web security through a real-world case study."
     },
     {
         "name": "Intro to Web Security",
         "image": "web_security.jpg",
         "date": "29 May 2025",
-        "time": "",
-        "status": "past"
+        "time": "6.30pm - 8.30pm",
+        "status": "past",
+        "location": "27-05-11",
+        "description": "Learn about basic web security concepts and vulnerabilities commonly exploited in web applications!"
     },
     {
         "name": "Pwn: Zero to Hero",
         "image": "pwn.jpg",
         "date": "30 July 2025",
-        "time": "",
-        "status": "past"
+        "time": "9am - 5pm",
+        "status": "past",
+        "location": "LT73C",
+        "description": "Go from zero to hero in low-level binary exploitation, including techniques like buffer overflow, ROP chaining, kernel pwn and more!"
     },
     {
         "name": "Intro to Cryptography",
         "image": "crypto.png",
         "date": "27 Nov 2025",
-        "time": "",
+        "time": "6.30pm - 8.30pm",
+        "location": "LT73C",
         "status": "upcoming"
     },
     {
         "name": "Introduction to C + Rev",
         "image": "c_rev.png",
         "date": "8 Jan 2026",
-        "time": "",
+        "time": "6.30pm - 8.30pm",
+        "location": "LT73C",
         "status": "upcoming"
     },
     {
         "name": "Game Hacking",
         "image": "game_hacking.png",
         "date": "14 Jan 2026",
-        "time": "",
+        "time": "9am - 5pm",
+        "location": "LT73C",
         "status": "upcoming"
     }
 ]
