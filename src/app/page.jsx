@@ -83,6 +83,10 @@ export default function Home() {
 
     return (
         <div className="px-6 min-h-full flex-1">
+            <div className="w-[98vw] p-3 mt-30 bg-yellow-200 rounded-2xl absolute flex flex-row justify-center items-center gap-5">
+                <Image src="/workman-1024-4285793479.png" width={50} height={50} alt="construction" />
+                <p className="text-black text-2xl">This website is still under development. Stay tuned for updates!</p>
+            </div>
             <div className="flex flex-col justify-center items-center min-h-svh">
                 {/* <Image src="/Logo ASCII.svg" width={644} height={968} alt="logo-ascii" /> */}
                 {ascii.split("\n").map((line, i) => {
