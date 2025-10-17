@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Intro to Cryptography",
+        "image": "crypto.png",
+        "date": "27 Nov 2025",
+        "time": "6.30pm - 8.30pm",
+        "location": "LT73C",
+        "status": "upcoming"
+    },
+    {
+        "name": "Introduction to C + Rev",
+        "image": "c_rev.png",
+        "date": "8 Jan 2026",
+        "time": "6.30pm - 8.30pm",
+        "location": "LT73C",
+        "status": "upcoming"
+    },
+    {
+        "name": "Game Hacking",
+        "image": "game_hacking.png",
+        "date": "14 Jan 2026",
+        "time": "9am - 5pm",
+        "location": "LT73C",
+        "status": "upcoming"
+    }
+]

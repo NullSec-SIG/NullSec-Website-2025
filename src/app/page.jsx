@@ -49,8 +49,10 @@ export default function Home() {
         return setIsVisible(current <= 400)
     }))
 
-    const [rawWorkshops, setRawWorkshops] = useState([]);
+    const [rawWorkshops, setRawWorkshops] = useState(null);
     const [workshops, setWorkshops] = useState([]);
+
+    const [largeSize, setLargeSize] = useState(false);
 
     useEffect(() => {
         const fetchData = () => {
@@ -62,15 +64,21 @@ export default function Home() {
                     setWorkshops(result)
                 })
         }
-        fetchData()
+        if (!rawWorkshops) fetchData()
+
+        const changeSize = () => {
+            if (window.screen.width >= 1536 && window.screen.height >= 860) setLargeSize(true)
+        }
+        changeSize();
     }, [])
 
     useEffect(() => {
-        setWorkshops(rawWorkshops.filter((event) => {
-            if (!pastChecked && !upcomingChecked) return event
-            else if (pastChecked) return event.status === "past" ? event : null
-            else return event.status === "upcoming" ? event : null
-        }))
+        if (rawWorkshops)
+            setWorkshops(rawWorkshops.filter((event) => {
+                if (!pastChecked && !upcomingChecked) return event
+                else if (pastChecked) return event.status === "past" ? event : null
+                else return event.status === "upcoming" ? event : null
+            }))
     }, [pastChecked, upcomingChecked])
 
     return (
@@ -79,7 +87,7 @@ export default function Home() {
                 {/* <Image src="/Logo ASCII.svg" width={644} height={968} alt="logo-ascii" /> */}
                 {ascii.split("\n").map((line, i) => {
                     return (
-                        <motion.pre key={i} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.05, delay: i * 0.05 }} className="font-[CommitMono] font-bold 2xl:text-lg/4 text-xs/3 text-[#BFDBF7] animate-pulse">
+                        <motion.pre key={i} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.05, delay: i * 0.05 }} className={`font-[CommitMono] font-bold ${largeSize ? "text-lg/4" : "text-xs/3"}  text-[#BFDBF7] animate-pulse`}>
                             {line}
                         </motion.pre>
                     )
@@ -102,19 +110,19 @@ export default function Home() {
                 <h1 className="font-bold font-[IBMPlexSans] text-5xl">WORKSHOPS</h1>
                 <div className="flex flex-col w-4/5">
                     <div className="flex flex-row items-center whitespace-pre select-none">
-                        <h3 className="text-2xl">FILTER: </h3>
+                        <h3 className="md:text-2xl text-xl">FILTER: </h3>
                         <div className="grid grid-cols-2 auto-cols-max border-white border-2 overflow-clip rounded-3xl">
                             <input id="past" checked={pastChecked} className="text-lg text-center sr-only peer/past" type="checkbox" onChange={(e) => { setPastChecked(e.target.checked); e.target.checked & setUpcomingChecked(false) }} />
-                            <label htmlFor="past" className="text-center px-5 text-lg border-r-2 peer-checked/past:bg-[#04AF9B] transition-all duration-100">
+                            <label htmlFor="past" className="text-center md:px-5 px-3 py-1 md:text-lg text-sm border-r-2 peer-checked/past:bg-[#04AF9B] transition-all duration-100 cursor-pointer">
                                 PAST
                             </label>
                             <input id="upcoming" checked={upcomingChecked} className="text-lg text-center sr-only peer/upcoming" type="checkbox" onChange={(e) => { setUpcomingChecked(e.target.checked); e.target.checked & setPastChecked(false) }} />
-                            <label htmlFor="upcoming" className="text-center px-5 text-lg peer-checked/upcoming:bg-[#04AF9B] transition-all duration-100">
+                            <label htmlFor="upcoming" className="text-center md:px-5 px-3 py-1 md:text-lg text-sm peer-checked/upcoming:bg-[#04AF9B] transition-all duration-100 cursor-pointer">
                                 UPCOMING
                             </label>
                         </div>
                     </div>
-                    <motion.div className="flex justify-between flex-wrap w-full h-full mt-10 mb-20 gap-10">
+                    <motion.div className="flex justify-between flex-wrap w-full h-full mt-10 mb-20 2xl:gap-10">
                         {
                             workshops && workshops.map((workshop) => {
                                 return <WorkshopCard key={workshop.name} name={workshop.name} image={workshop.image} date={workshop.date} time={workshop.time} status={workshop.status} description={workshop.description} location={workshop.location} />
