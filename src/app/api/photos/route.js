@@ -15,7 +15,7 @@ export async function GET(req, { params }) {
 
         let photoList = {
             name: workshop.name,
-            id: event,
+            id: event ?? workshop.image.split(".")[0],
             photos: []
         }
         

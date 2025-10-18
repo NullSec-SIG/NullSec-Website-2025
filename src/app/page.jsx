@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion, useMotionValueEvent, useScroll, useTransform } from "motion/react"
 import { useEffect, useRef, useState } from "react";
 import WorkshopCard from "./components/workshopCard";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
     const { scrollY } = useScroll();
@@ -126,7 +127,7 @@ export default function Home() {
                             </label>
                         </div>
                     </div>
-                    <motion.div className="flex justify-between flex-wrap w-full h-full mt-10 mb-20 2xl:gap-10">
+                    <motion.div className="flex basis-auto flex-wrap w-full h-full mt-10 mb-20 2xl:gap-10 gap-5">
                         {
                             workshops && workshops.map((workshop) => {
                                 return <WorkshopCard key={workshop.name} name={workshop.name} image={workshop.image} date={workshop.date} time={workshop.time} status={workshop.status} description={workshop.description} location={workshop.location} />
