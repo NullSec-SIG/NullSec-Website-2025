@@ -68,7 +68,7 @@ export default function GalleryPage() {
                     </select> */}
                 </div>
             </div>
-            <div className="w-4/5 flex basis-auto flex-wrap gap-10 mt-10 mb-10">
+            <div className="w-4/5 grid gap-10 mt-10 mb-10" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))' }}>
                 {
                     dataFetched && data.map(item => {
                         return item.photos.map(image => {

@@ -18,6 +18,12 @@ export default function Navbar() {
                     </div>
                 </div>
             </motion.div>
+            <div className="w-full max-h-[10vh] flex flex-row justify-center items-center mt-28 absolute">
+                <div className="lg:mx-5 md:mx-5 mx-3 p-3 w-full bg-yellow-200 rounded-2xl flex flex-row justify-center items-center gap-5">
+                    <Image src="/workman-1024-4285793479.png" width={50} height={50} alt="construction" />
+                    <p className="text-black text-2xl">This website is still under development. Stay tuned for updates!</p>
+                </div>
+            </div>
         </div>
     )
 }

@@ -68,9 +68,11 @@ export default function Home() {
         if (!rawWorkshops) fetchData()
 
         const changeSize = () => {
-            if (window.screen.width >= 1536 && window.screen.height >= 860) setLargeSize(true)
+            setLargeSize(window.innerWidth >= 1536 && window.innerHeight >= 860)
         }
         changeSize();
+        window.addEventListener("resize", changeSize);
+        //return () => window.removeEventListener("resize", changeSize);
     }, [])
 
     useEffect(() => {
@@ -84,10 +86,6 @@ export default function Home() {
 
     return (
         <div className="px-6 min-h-full flex-1">
-            <div className="w-[98vw] p-3 mt-30 bg-yellow-200 rounded-2xl absolute flex flex-row justify-center items-center gap-5">
-                <Image src="/workman-1024-4285793479.png" width={50} height={50} alt="construction" />
-                <p className="text-black text-2xl">This website is still under development. Stay tuned for updates!</p>
-            </div>
             <div className="flex flex-col justify-center items-center min-h-svh">
                 {/* <Image src="/Logo ASCII.svg" width={644} height={968} alt="logo-ascii" /> */}
                 {ascii.split("\n").map((line, i) => {
@@ -127,12 +125,14 @@ export default function Home() {
                             </label>
                         </div>
                     </div>
-                    <motion.div className="flex basis-auto flex-wrap w-full h-full mt-10 mb-20 2xl:gap-10 gap-5">
-                        {
-                            workshops && workshops.map((workshop) => {
-                                return <WorkshopCard key={workshop.name} name={workshop.name} image={workshop.image} date={workshop.date} time={workshop.time} status={workshop.status} description={workshop.description} location={workshop.location} />
-                            })
-                        }
+                    <motion.div className="w-full mt-10 mb-20">
+                        <div className="grid w-full gap-6" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(384px, 1fr))' }}>
+                            {
+                                workshops && workshops.map((workshop) => {
+                                    return <WorkshopCard key={workshop.name} name={workshop.name} image={workshop.image} date={workshop.date} time={workshop.time} status={workshop.status} description={workshop.description} location={workshop.location} />
+                                })
+                            }
+                        </div>
                     </motion.div>
                 </div>
             </div>

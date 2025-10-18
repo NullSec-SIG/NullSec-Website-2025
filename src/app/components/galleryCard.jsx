@@ -8,7 +8,7 @@ export default function GalleryCard({ fileName }) {
 
     return (
         <motion.div className="w-[360px] h-[240px] rounded-2xl overflow-clip cursor-pointer relative">
-            <Image src={`/events/${fileName}`} width={480} height={320} alt="image"/>
+            <Image src={`/events/${fileName}`} width={360} height={240} alt="image"/>
         </motion.div>
     )
 }
