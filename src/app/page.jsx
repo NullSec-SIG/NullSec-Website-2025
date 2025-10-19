@@ -1,10 +1,10 @@
 "use client"
 
 import Image from "next/image";
-import { motion, useMotionValueEvent, useScroll, useTransform } from "motion/react"
-import { useEffect, useRef, useState } from "react";
+import { motion, useMotionValueEvent, useScroll } from "motion/react"
+import { useEffect, useState } from "react";
 import WorkshopCard from "./components/workshopCard";
-import { useRouter } from "next/navigation";
+import GlitchedTitle from "./components/glitchedTitle";
 
 export default function Home() {
     const { scrollY } = useScroll();
@@ -85,8 +85,8 @@ export default function Home() {
     }, [pastChecked, upcomingChecked])
 
     return (
-        <div className="px-6 min-h-full flex-1">
-            <div className="flex flex-col justify-center items-center min-h-svh">
+        <div className="px-6 min-h-full flex-1 overflow-clip">
+            <div className="flex flex-col justify-center items-center min-h-svh overflow-clip">
                 {/* <Image src="/Logo ASCII.svg" width={644} height={968} alt="logo-ascii" /> */}
                 {ascii.split("\n").map((line, i) => {
                     return (
@@ -95,10 +95,7 @@ export default function Home() {
                         </motion.pre>
                     )
                 })}
-                <div className="flex flex-row mt-12">
-                    <h1 className="lg:text-6xl md:text-5xl text-3xl font-bold whitespace-pre">This is </h1>
-                    <span className="lg:text-6xl md:text-5xl text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#04AF9B] to-white from-40%">NullSec.</span>
-                </div>
+                <GlitchedTitle />
                 <h2 className="font-[IBMPlexSans] lg:text-2xl md:text-xl text-md text-center mt-8">The Cybersecurity Special Interest Group of Ngee Ann Polytechnic.</h2>
 
                 <motion.div animate={{ opacity: isVisible ? 1 : 0 }} className="absolute bottom-6 flex flex-col justify-center items-center">
@@ -109,24 +106,26 @@ export default function Home() {
                 </motion.div>
             </div>
 
-            <div className="flex flex-col items-center min-h-svh mt-20 gap-10">
-                <h1 className="font-bold font-[IBMPlexSans] text-5xl">WORKSHOPS</h1>
+            <Image src="/Line 1.png" width={1081} height={1} alt="border" className="mt-20 mx-auto w-4/5" />
+
+            <div className="flex flex-col items-center min-h-svh mt-10 gap-10">
+                <h1 className="font-bold font-[IBMPlexSans] md:text-5xl text-3xl">WORKSHOPS</h1>
                 <div className="flex flex-col w-4/5">
                     <div className="flex flex-row items-center whitespace-pre select-none">
-                        <h3 className="md:text-2xl text-xl">FILTER: </h3>
+                        <h3 className="md:text-2xl text-lg">FILTER: </h3>
                         <div className="grid grid-cols-2 auto-cols-max border-white border-2 overflow-clip rounded-3xl">
                             <input id="past" checked={pastChecked} className="text-lg text-center sr-only peer/past" type="checkbox" onChange={(e) => { setPastChecked(e.target.checked); e.target.checked & setUpcomingChecked(false) }} />
                             <label htmlFor="past" className="text-center md:px-5 px-3 py-1 md:text-lg text-sm border-r-2 peer-checked/past:bg-[#04AF9B] transition-all duration-100 cursor-pointer">
                                 PAST
                             </label>
-                            <input id="upcoming" checked={upcomingChecked} className="text-lg text-center sr-only peer/upcoming" type="checkbox" onChange={(e) => { setUpcomingChecked(e.target.checked); e.target.checked & setPastChecked(false) }} />
+                            <input id="upcoming" checked={upcomingChecked} className="md:text-lg text-sm text-center sr-only peer/upcoming" type="checkbox" onChange={(e) => { setUpcomingChecked(e.target.checked); e.target.checked & setPastChecked(false) }} />
                             <label htmlFor="upcoming" className="text-center md:px-5 px-3 py-1 md:text-lg text-sm peer-checked/upcoming:bg-[#04AF9B] transition-all duration-100 cursor-pointer">
                                 UPCOMING
                             </label>
                         </div>
                     </div>
                     <motion.div className="w-full mt-10 mb-20">
-                        <div className="grid w-full gap-6" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(384px, 1fr))' }}>
+                        <div className="grid w-full gap-10" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(384px, 1fr))' }}>
                             {
                                 workshops && workshops.map((workshop) => {
                                     return <WorkshopCard key={workshop.name} name={workshop.name} image={workshop.image} date={workshop.date} time={workshop.time} status={workshop.status} description={workshop.description} location={workshop.location} />

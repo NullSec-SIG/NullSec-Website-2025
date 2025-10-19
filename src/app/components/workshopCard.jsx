@@ -11,16 +11,16 @@ export default function WorkshopCard({ name, image, date, time, status, descript
     const router = useRouter();
 
     return (
-        <motion.div initial={{ opacity: 0, y: -30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ amount: 0.6, once: true }} onHoverStart={() => setHover(true)} onHoverEnd={() => setHover(false)} className="w-full min-w-[384px] max-w-[384px] h-[480px] rounded-2xl overflow-clip cursor-pointer relative">
-            <motion.img src={`/events/${image}`} width={384} height={512} alt={name} initial={{ filter: "blur(0px)" }} animate={{ filter: hover ? "blur(6px)" : "blur(0px)" }} className="absolute" />
-            <div className="absolute h-1/2 w-full flex justify-center items-center">
-                <motion.button initial={{ opacity: 0 }} animate={{ opacity: hover ? 1 : 0 }} className="bg-[#101010] p-4 rounded-lg border-1 cursor-pointer" id="galleryButton" type="button" onClick={() => router.push(`/gallery?event=${image.split(".")[0]}`)}>
+        <motion.div initial={{ opacity: 0, y: -30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ amount: 0.6, once: true }} onHoverStart={() => setHover(true)} onHoverEnd={() => setHover(false)} onClick={() => setHover(!hover)} className="md:min-w-[384px] md:max-w-[384px] w-[280px] h-[480px] rounded-2xl overflow-clip cursor-pointer relative">
+            <motion.img src={`/events/${image}`} width={384} height={512} alt={name} initial={{ filter: "blur(0px)" }} animate={{ filter: hover ? "blur(6px)" : "blur(0px)" }} className="absolute rounded-2xl" />
+            <div className="absolute min-h-1/2 w-full flex justify-center items-center">
+                <motion.button initial={{ visibility: "hidden", opacity: 0 }} animate={{ visibility: hover ? "visible" : "hidden", opacity: hover ? 1 : 0 }} className="bg-[#101010] p-4 rounded-lg border-1 cursor-pointer" id="galleryButton" type="button" onClick={() => router.push(`/gallery?event=${image.split(".")[0]}`)}>
                     <label htmlFor="galleryButton" className="cursor-pointer">
                         OPEN IN GALLERY
                     </label>
                 </motion.button>
             </div>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: hover ? 1 : 0 }} className="bg-[#101010] absolute w-full h-1/2 bottom-0">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: hover ? 1 : 0 }} className="bg-[#101010] absolute w-full min-h-1/2 bottom-0">
                 <div className="flex flex-col m-6 gap-2">
                     <h3 className="text-2xl">{name}</h3>
                     {
