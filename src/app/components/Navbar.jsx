@@ -23,7 +23,7 @@ export default function Navbar() {
                     {isWide ? (
                         <Image src="/Home Logo.svg" width={180} height={36} alt="logo" className="cursor-pointer hover:fill-gray-400 md:w-[180px] md:h-[36px] w-[120px] h-[24px]" onClick={() => router.push("/")} />
                     ) : (
-                        <svg width="28" height="41" viewBox="0 0 54 79" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="28" height="41" viewBox="0 0 54 79" fill="none" xmlns="http://www.w3.org/2000/svg" className="cursor-pointer" onClick={() => router.push("/")}>
                             <g clipPath="url(#clip0_79_56)">
                                 <path d="M22.5012 0.808105L3.49195 9.99435L0.308472 49.8681" stroke="white" strokeWidth="2" strokeMiterlimit="10" />
                                 <path d="M3.27508 10.0159L13.6901 24.5797L13.907 24.1767L0.268799 50.028" stroke="white" strokeWidth="2" strokeMiterlimit="10" />
@@ -47,19 +47,19 @@ export default function Navbar() {
                             </defs>
                         </svg>
                     )}
-                    <div className="flex flex-row items-center gap-8 pr-3">
+                    <div className="flex flex-row items-center text-center gap-8 pr-3">
                         <div className="cursor-pointer text-gray-300 hover:text-gray-100 active:text-gray-400" onClick={() => router.push("/hnf2025")}>HACK N FLAG</div>
                         <div className="cursor-pointer text-gray-300 hover:text-gray-100 active:text-gray-400" onClick={() => router.push("/gallery")}>GALLERY</div>
                         <div className="cursor-pointer text-gray-300 hover:text-gray-100 active:text-gray-400" onClick={() => router.push("/about")}>ABOUT</div>
                     </div>
                 </div>
             </motion.div>
-            <div className="w-full max-h-[10vh] flex flex-row justify-center items-center mt-28 absolute">
+            {/* <div className="w-full max-h-[10vh] flex flex-row justify-center items-center mt-28 absolute">
                 <div className="lg:mx-5 md:mx-5 mx-3 p-3 w-full bg-yellow-200 rounded-2xl flex flex-row justify-center items-center gap-5">
                     <Image src="/workman-1024-4285793479.png" width={50} height={50} alt="construction" />
                     <p className="text-black text-2xl">This website is still under development. Stay tuned for updates!</p>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

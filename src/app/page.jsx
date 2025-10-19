@@ -125,7 +125,7 @@ export default function Home() {
                         </div>
                     </div>
                     <motion.div className="w-full mt-10 mb-20">
-                        <div className="grid w-full gap-10" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(384px, 1fr))' }}>
+                        <div className="grid w-full justify-items-center gap-10" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(384px, 1fr))' }}>
                             {
                                 workshops && workshops.map((workshop) => {
                                     return <WorkshopCard key={workshop.name} name={workshop.name} image={workshop.image} date={workshop.date} time={workshop.time} status={workshop.status} description={workshop.description} location={workshop.location} />
