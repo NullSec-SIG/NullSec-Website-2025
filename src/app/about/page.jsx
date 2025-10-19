@@ -30,7 +30,7 @@ export default function AboutPage() {
                     <div className="flex flex-row justify-center items-center gap-15 flex-wrap">
                         <TeamCard name="ALOYSIUS LUKE TAY SHI YUAN" role="Head of Publicity" picture="/team/Aloysius.jpg" description="Aloysius coordinates NullSec's publicity and administers NullSec's Instagram. He has an eye for the latest trends in social media which he uses for our reel production." />
                         <TeamCard name="RYAN WEE WEI YAN" role="Publicity EXCO" picture="/team/Ryan Wee.jpg" description="Ryan helps with the designing of publicity materials, including posters, stickers, and even this website. He also loves cybersecurity and plays the occasional CTF in his free time." />
-                        <TeamCard name="POOK XUAN TONG" role="Publicity EXCO" picture="/team/Xuan Tong.jpg" description="" />
+                        <TeamCard name="POOK XUAN TONG" role="Publicity EXCO" picture="/team/Xuan Tong.jpg" description="Xuan Tong develops creative visuals for publicity, combining design skills and ideas to engage audiences and share content. She also has experience across a broad range of design work." />
                         <TeamCard name="KOH BOCK CHOW" role="Photographer" picture="/team/Bock Chow.jpg" description="" />
                     </div>
                 </div>
