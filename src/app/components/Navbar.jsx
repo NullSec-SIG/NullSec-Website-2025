@@ -1,13 +1,14 @@
 "use client"
 
 import Image from "next/image"
-import { useRouter } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import { motion } from "motion/react"
 import { useEffect, useState } from "react"
 
 export default function Navbar() {
     const router = useRouter()
     const [isWide, setIsWide] = useState(false)
+    const pathname = usePathname()
 
     useEffect(() => {
         const check = () => setIsWide(typeof window !== 'undefined' && window.innerWidth >= 640)
@@ -48,9 +49,9 @@ export default function Navbar() {
                         </svg>
                     )}
                     <div className="flex flex-row items-center text-center gap-8 pr-3">
-                        <div className="cursor-pointer text-gray-300 hover:text-gray-100 active:text-gray-400" onClick={() => router.push("/hnf2025")}>HACK N FLAG</div>
-                        <div className="cursor-pointer text-gray-300 hover:text-gray-100 active:text-gray-400" onClick={() => router.push("/gallery")}>GALLERY</div>
-                        <div className="cursor-pointer text-gray-300 hover:text-gray-100 active:text-gray-400" onClick={() => router.push("/about")}>ABOUT</div>
+                        <div className={`cursor-pointer ${pathname === "/hnf2025" ? "text-white font-bold" : "text-gray-300"} hover:text-gray-100 active:text-gray-400`} onClick={() => router.push("/hnf2025")}>{`${isWide ? "HACK N FLAG" : "HNF 2025"}`}</div>
+                        <div className={`cursor-pointer ${pathname === "/gallery" ? "text-white font-bold" : "text-gray-300"} hover:text-gray-100 active:text-gray-400`} onClick={() => router.push("/gallery")}>GALLERY</div>
+                        <div className={`cursor-pointer ${pathname === "/about" ? "text-white font-bold" : "text-gray-300"} hover:text-gray-100 active:text-gray-400`} onClick={() => router.push("/about")}>ABOUT</div>
                     </div>
                 </div>
             </motion.div>
