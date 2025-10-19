@@ -17,7 +17,7 @@ export default function HNF2025Page() {
 
     return (
         <div className="flex flex-col">
-            <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="flex md:flex-row flex-col-reverse justify-center items-center min-h-svh md:gap-10 p-12">
+            <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="flex md:flex-row flex-col-reverse justify-center items-center min-h-svh md:gap-10 md:mt-0 mt-10 p-12">
                 <div className="flex flex-col md:text-left text-center px-6">
                     <h1 className="md:text-4xl text-xl font-bold mb-5">Cybersecurity, gamified.</h1>
                     <h2 className="md:text-2xl text-md text-gray-400">Gain hands on experience in key areas like web, forensics and pwn.</h2>
