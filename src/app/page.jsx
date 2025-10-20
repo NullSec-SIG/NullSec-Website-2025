@@ -54,6 +54,9 @@ export default function Home() {
     const [workshops, setWorkshops] = useState([]);
 
     const [largeSize, setLargeSize] = useState(false);
+    const [superSmallSize, setSuperSmallSize] = useState(false);
+    const [asciiCompletedCount, setAsciiCompletedCount] = useState(0);
+    const [asciiPulseEnabled, setAsciiPulseEnabled] = useState(false);
 
     useEffect(() => {
         const fetchData = () => {
@@ -69,10 +72,11 @@ export default function Home() {
 
         const changeSize = () => {
             setLargeSize(window.innerWidth >= 1536 && window.innerHeight >= 860)
+            setSuperSmallSize(window.innerHeight < 720)
         }
         changeSize();
         window.addEventListener("resize", changeSize);
-        //return () => window.removeEventListener("resize", changeSize);
+        return () => window.removeEventListener("resize", changeSize);
     }, [])
 
     useEffect(() => {
@@ -89,8 +93,21 @@ export default function Home() {
             <div className="flex flex-col justify-center items-center min-h-svh overflow-clip">
                 {/* <Image src="/Logo ASCII.svg" width={644} height={968} alt="logo-ascii" /> */}
                 {ascii.split("\n").map((line, i) => {
+                    const totalLines = ascii.split("\n").length;
                     return (
-                        <motion.pre key={i} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.05, delay: i * 0.05 }} className={`font-[CommitMono] font-bold ${largeSize ? "text-lg/4" : "text-xs/3"}  text-[#BFDBF7] animate-pulse`}>
+                        <motion.pre
+                            key={i}
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.05, delay: i * 0.05 }}
+                            onAnimationComplete={() => {
+                                setAsciiCompletedCount((c) => {
+                                    const next = c + 1;
+                                    if (next >= totalLines) setAsciiPulseEnabled(true);
+                                    return next;
+                                })
+                            }}
+                            className={`font-[CommitMono] font-bold ${largeSize ? "text-lg/4" : superSmallSize ? "text-[0.5rem]/2" : "text-xs/3"}  text-[#BFDBF7] ${asciiPulseEnabled ? 'animate-pulse' : ''}`}>
                             {line}
                         </motion.pre>
                     )
@@ -110,22 +127,22 @@ export default function Home() {
 
             <div className="flex flex-col items-center min-h-svh mt-10 gap-10">
                 <h1 className="font-bold font-[IBMPlexSans] md:text-5xl text-3xl">WORKSHOPS</h1>
-                <div className="flex flex-col w-4/5">
-                    <div className="flex flex-row items-center whitespace-pre select-none">
+                <div className="flex flex-col md:w-4/5 md:items-start items-center h-full">
+                    <div className="flex flex-row md:justify-start justify-center items-center whitespace-pre select-none">
                         <h3 className="md:text-2xl text-lg">FILTER: </h3>
                         <div className="grid grid-cols-2 auto-cols-max border-white border-2 overflow-clip rounded-3xl">
                             <input id="past" checked={pastChecked} className="text-lg text-center sr-only peer/past" type="checkbox" onChange={(e) => { setPastChecked(e.target.checked); e.target.checked & setUpcomingChecked(false) }} />
-                            <label htmlFor="past" className="text-center md:px-5 px-3 py-1 md:text-lg text-sm border-r-2 peer-checked/past:bg-[#04AF9B] transition-all duration-100 cursor-pointer">
+                            <label htmlFor="past" className="text-center md:px-5 px-3 py-1 md:text-lg text-sm border-r-2 hover:bg-[#04AF98] peer-checked/past:bg-[#04AF9B] transition-all duration-100 cursor-pointer">
                                 PAST
                             </label>
                             <input id="upcoming" checked={upcomingChecked} className="md:text-lg text-sm text-center sr-only peer/upcoming" type="checkbox" onChange={(e) => { setUpcomingChecked(e.target.checked); e.target.checked & setPastChecked(false) }} />
-                            <label htmlFor="upcoming" className="text-center md:px-5 px-3 py-1 md:text-lg text-sm peer-checked/upcoming:bg-[#04AF9B] transition-all duration-100 cursor-pointer">
+                            <label htmlFor="upcoming" className="text-center md:px-5 px-3 py-1 md:text-lg text-sm hover:bg-[#04AF98] peer-checked/upcoming:bg-[#04AF9B] transition-all duration-100 cursor-pointer">
                                 UPCOMING
                             </label>
                         </div>
                     </div>
-                    <motion.div className="w-full mt-10 mb-20">
-                        <div className="grid w-full md:justify-items-center gap-10" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(384px, 1fr))' }}>
+                    <motion.div className="w-full h-full mt-10 mb-20">
+                        <div className="grid w-full h-full md:justify-items-start justify-items-center gap-10" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(384px, 1fr))' }}>
                             {
                                 workshops && workshops.map((workshop) => {
                                     return <WorkshopCard key={workshop.name} name={workshop.name} image={workshop.image} date={workshop.date} time={workshop.time} status={workshop.status} description={workshop.description} location={workshop.location} />
