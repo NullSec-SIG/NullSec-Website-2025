@@ -126,7 +126,7 @@ export default function Home() {
             <Image src="/Line 1.png" width={1081} height={1} alt="border" className="mt-20 mx-auto w-4/5" />
 
             <div className="flex flex-col items-center min-h-svh mt-10 gap-10">
-                <h1 className="font-bold font-[IBMPlexSans] md:text-5xl text-3xl">WORKSHOPS</h1>
+                <h1 className="font-bold font-[IBMPlexSans] md:text-5xl text-3xl">EVENTS</h1>
                 <div className="flex flex-col md:w-4/5 md:items-start items-center h-full">
                     <div className="flex flex-row md:justify-start justify-center items-center whitespace-pre select-none">
                         <h3 className="md:text-2xl text-lg">FILTER: </h3>

@@ -43,5 +43,14 @@
         "status": "past",
         "location": "LT73C",
         "description": "Go from zero to hero in low-level binary exploitation, including techniques like buffer overflow, ROP chaining, kernel pwn and more!"
+    },
+    {
+        "name": "Hack N Flag",
+        "image": "hnf.jpg",
+        "date": "28-29 October 2025",
+        "time": "9am - 5pm",
+        "status": "upcoming",
+        "location": "LT58C",
+        "description": "Test your cybersecurity skills against your peers in NullSec's first flagship Capture the Flag (CTF) event!"
     }
 ]

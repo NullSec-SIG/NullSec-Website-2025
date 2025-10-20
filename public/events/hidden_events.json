@@ -1,5 +1,14 @@
 [
     {
+        "name": "Infra Hacking",
+        "image": "infra_hacking.png",
+        "date": "12 November 2025",
+        "time": "9am - 5pm",
+        "status": "upcoming",
+        "location": "TBD",
+        "description": "Learn about black box pentesting HTB style against Windows and Linux based machines!"
+    },
+    {
         "name": "Intro to Cryptography",
         "image": "crypto.png",
         "date": "27 Nov 2025",
