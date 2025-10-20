@@ -56,39 +56,39 @@ export default function HNF2025Page() {
 
             <div className="flex flex-col items-center mt-10 px-4 min-h-svh">
                 <h1 className="md:text-5xl text-3xl font-bold mb-10">DETAILS</h1>
-                <motion.div initial={{ opacity: 0, y: -30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ amount: 0.8, once: true }} className="grid grid-cols-1 md:grid-cols-2 gap-y-2 md:gap-y-5 md:gap-x-14 lg:w-4/5 items-start">
-                    <h2 className="md:text-2xl text-lg font-bold md:text-right text-center">Start Date/Time</h2>
-                    <h2 className="md:text-2xl text-lg md:text-left text-center">28 October 2025 9.00am</h2>
+                <motion.div initial={{ opacity: 0, y: -30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ amount: 0.8, once: true }} className="grid grid-cols-1 md:grid-cols-2 gap-y-1 md:gap-y-5 md:gap-x-14 lg:w-4/5 items-start">
+                    <h2 className="md:text-2xl text-md font-bold md:text-right text-center">Start Date/Time</h2>
+                    <h2 className="md:text-2xl text-md md:text-left text-center">28 October 2025 9.00am</h2>
 
-                    <div className="md:hidden md:m-2"></div>
+                    <div className="md:hidden m-2"></div>
 
-                    <h2 className="md:text-2xl text-lg font-bold md:text-right text-center">Scoreboard Freeze Date/Time</h2>
-                    <h2 className="md:text-2xl text-lg md:text-left text-center">29 October 2025 4.00pm</h2>
+                    <h2 className="md:text-2xl text-md font-bold md:text-right text-center">Scoreboard Freeze Date/Time</h2>
+                    <h2 className="md:text-2xl text-md md:text-left text-center">29 October 2025 4.00pm</h2>
 
-                    <div className="md:hidden md:m-2"></div>
+                    <div className="md:hidden m-2"></div>
 
-                    <h2 className="md:text-2xl text-lg font-bold md:text-right text-center">End Date/Time</h2>
-                    <h2 className="md:text-2xl text-lg md:text-left text-center">29 October 2025 5.00pm</h2>
+                    <h2 className="md:text-2xl text-md font-bold md:text-right text-center">End Date/Time</h2>
+                    <h2 className="md:text-2xl text-md md:text-left text-center">29 October 2025 5.00pm</h2>
 
-                    <div className="md:hidden md:m-2"></div>
+                    <div className="md:hidden m-2"></div>
 
-                    <h2 className="md:text-2xl text-lg font-bold md:text-right text-center">Medium</h2>
-                    <h2 className="md:text-2xl text-lg md:text-left text-center">Online (28 Oct), Physical (29 Oct)</h2>
+                    <h2 className="md:text-2xl text-md font-bold md:text-right text-center">Medium</h2>
+                    <h2 className="md:text-2xl text-md md:text-left text-center">Online (28 Oct), Physical (29 Oct)</h2>
 
-                    <div className="md:hidden md:m-2"></div>
+                    <div className="md:hidden m-2"></div>
 
-                    <h2 className="md:text-2xl text-lg font-bold md:text-right text-center">Location</h2>
-                    <h2 className="md:text-2xl text-lg md:text-left text-center">NP LT58C (29 Oct)</h2>
+                    <h2 className="md:text-2xl text-md font-bold md:text-right text-center">Location</h2>
+                    <h2 className="md:text-2xl text-md md:text-left text-center">NP LT58C (29 Oct)</h2>
 
-                    <div className="md:hidden md:m-2"></div>
+                    <div className="md:hidden m-2"></div>
 
-                    <h2 className="md:text-2xl text-lg font-bold md:text-right text-center">Challenge Types</h2>
-                    <h2 className="md:text-2xl text-lg md:text-left text-center">Web, Infra, Pwn, Forensics, Misc, Crypto, Rev, OSINT</h2>
+                    <h2 className="md:text-2xl text-md font-bold md:text-right text-center">Challenge Types</h2>
+                    <h2 className="md:text-2xl text-md md:text-left text-center">Web, Infra, Pwn, Forensics, Misc, Crypto, Rev, OSINT</h2>
 
-                    <div className="md:hidden md:m-2"></div>
+                    <div className="md:hidden m-2"></div>
 
-                    <h2 className="md:text-2xl text-lg font-bold md:text-right text-center">Categories</h2>
-                    <h2 className="md:text-2xl text-lg md:text-left text-center">NP Students, Open</h2>
+                    <h2 className="md:text-2xl text-md font-bold md:text-right text-center">Categories</h2>
+                    <h2 className="md:text-2xl text-md md:text-left text-center">NP Students, Open</h2>
                 </motion.div>
                 <Image src="/Line 1.png" width={1081} height={1} alt="border" className="mt-20 mx-auto w-4/5" />
                 <h1 className="md:text-5xl text-3xl font-bold my-10">HOW TO PLAY</h1>
