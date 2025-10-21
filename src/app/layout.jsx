@@ -16,7 +16,8 @@ export default function RootLayout({ children }) {
                 className={`antialiased flex flex-col min-h-svh`}
             >
                 <Navbar />
-                <main className="flex-1 min-h-full flex flex-col">{children}</main>
+                <div className="backdrop inset-0 fixed h-svh -z-10" />
+                <main className="flex-1 min-h-full max-h-full overflow-auto flex flex-col">{children}</main>
                 <SocialsFooter />
                 <div className="bg-black/70 flex flex-col justify-center items-center p-8 gap-5">
                     <div className="flex flex-row gap-5">

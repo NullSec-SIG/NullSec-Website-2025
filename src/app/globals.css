@@ -29,7 +29,10 @@
 }
 
 body {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.40) 100%), #022B3A;
   color: white;
   font-family: "CommitMono", sans-serif
+}
+
+.backdrop {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.40) 100%), #022B3A;
 }

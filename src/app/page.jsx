@@ -107,7 +107,7 @@ export default function Home() {
                                     return next;
                                 })
                             }}
-                            className={`font-[CommitMono] font-bold ${largeSize ? "text-lg/4" : superSmallSize ? "text-[0.5rem]/2" : "text-xs/3"}  text-[#BFDBF7] ${asciiPulseEnabled ? 'animate-pulse' : ''}`}>
+                            className={`font-[CommitMono] font-bold ${largeSize ? "text-lg/4" : superSmallSize ? "text-[0.5rem]/2" : "text-xs/3"}  text-[#BFDBF7] ${asciiPulseEnabled ? 'animate-pulse' : ''} select-none`}>
                             {line}
                         </motion.pre>
                     )
