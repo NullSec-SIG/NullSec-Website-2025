@@ -31,8 +31,8 @@ export default function AboutPage() {
                     </div>
                     <div className="flex flex-row justify-center items-center gap-15 flex-wrap">
                         <TeamCard name="TAN CHIN RAY" role="Head of Technology" picture="/team/Chin Ray.png" description="Chin Ray administers NullSec's servers, software and other digital infrastructure. He also helps coordinate content for NullSec's workshops and events." />
-                        <TeamCard name="TAN JUN WEI" role="Tech EXCO" picture="/team/Jun Wei.jpg" description="Jun Wei works on the ideation and creation content, including slides, materials and challenges. He has created the most CTF challenges individually in both YCEP 2025 and HNF 2025." />
-                        <TeamCard name="DAMIAN KOH" role="Tech EXCO" picture="/team/Damian.jpg" description="Damian works on the ideation and creation content, including slides, materials and challenges. He has great experience administering SIEM systems and web app penetration testing." />
+                        <TeamCard name="TAN JUN WEI" role="Tech EXCO" picture="/team/Jun Wei.jpg" description="Jun Wei works on the ideation and creation of content, including slides, materials and challenges. He has created the most CTF challenges individually in both YCEP 2025 and HNF 2025." />
+                        <TeamCard name="DAMIAN KOH" role="Tech EXCO" picture="/team/Damian.jpg" description="Damian works on the ideation and creation of content, including slides, materials and challenges. He has great experience administering SIEM systems and web app penetration testing." />
                     </div>
                     <div className="flex flex-row justify-center items-center gap-15 flex-wrap">
                         <TeamCard name="QUAN YU" role="Head of SecOps" picture="/team/Quan Yu.jpg" description="Quan Yu coordinates NullSec's administrative tasks, including room booking, form creation and logistics. She came in clutch during the Kali workshop, successfully booking LT79 within a day's notice." />
