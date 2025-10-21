@@ -92,7 +92,7 @@ export default function HNF2025Page() {
                 </motion.div>
                 <Image src="/Line 1.png" width={1081} height={1} alt="border" className="mt-20 mx-auto w-4/5" />
                 <h1 className="md:text-5xl text-3xl font-bold my-10">HOW TO PLAY</h1>
-                <motion.div initial={{ opacity: 0, y: -30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ amount: 0.2, once: true }} className="md:grid md:justify-items-center flex flex-col text-center md:w-4/5 w-full px-2 mb-10 gap-5" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))' }}>
+                <motion.div initial={{ opacity: 0, y: -30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ amount: 0.2, once: true }} className="md:grid md:justify-items-center flex flex-col text-center w-full px-2 mb-10 gap-5" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))' }}>
                     <div className="flex flex-col items-center md:border-1 rounded-2xl p-10 md:w-md gap-5">
                         <h2 className="font-bold text-3xl">01</h2>
                         <Image src="/hnf-step1.png" width={766} height={530} alt="hnf-step1" className="md:h-[330px]" />
