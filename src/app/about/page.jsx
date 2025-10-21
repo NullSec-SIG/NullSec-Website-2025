@@ -35,7 +35,7 @@ export default function AboutPage() {
                         <TeamCard name="DAMIAN KOH" role="Tech EXCO" picture="/team/Damian.jpg" description="Damian works on the ideation and creation content, including slides, materials and challenges. He has great experience administering SIEM systems and web app penetration testing." />
                     </div>
                     <div className="flex flex-row justify-center items-center gap-15 flex-wrap">
-                        <TeamCard name="QUAN YU" role="Head of SecOps" picture="/team/Quan Yu.jpg" description="Quan Yu coordinates NullSec's administrative tasks, including room booking, form creation and logistics. She in came in clutch during the Kali workshop, successfully booking LT79 within a day's notice." />
+                        <TeamCard name="QUAN YU" role="Head of SecOps" picture="/team/Quan Yu.jpg" description="Quan Yu coordinates NullSec's administrative tasks, including room booking, form creation and logistics. She came in clutch during the Kali workshop, successfully booking LT79 within a day's notice." />
                         <TeamCard name="RYAN TAN" role="SecOps EXCO" picture="/team/Ryan Tan.jpg" description="Ryan Tan mainly handles logistics and administrative matters, but also assisted in executing the OSINT workshop and challenge creation. He makes sure that you're never solving his OSINT challenges." />
                         <TeamCard name="RYAN LOW" role="SecOps EXCO" picture="/team/Ryan Low.jpg" description="Ryan Low is a Tech turned SecOps EXCO who now handles logistics and administrative matters. Being highly involved in GIAC, he has experience in system hacking, and is currently exploring AI." />
                     </div>
