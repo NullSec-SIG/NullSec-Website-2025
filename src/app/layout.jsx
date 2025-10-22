@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body
-                className={`antialiased flex flex-col min-h-svh`}
+                className={`backdrop-ios antialiased flex flex-col min-h-svh`}
             >
                 <Navbar />
                 <div className="backdrop inset-0 fixed h-svh -z-10" />
