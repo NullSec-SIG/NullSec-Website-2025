@@ -18,13 +18,18 @@ export default function HNF2025Page() {
 
     return (
         <div className="flex flex-col">
+            <div className="flex justify-center items-center md:w-full md:mt-40 mt-26 md:mx-0 mx-3 absolute">
+                <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: firstAnimationDone ? 1 : 0, y: firstAnimationDone ? 0 : 40 }} transition={{ duration: 1 }} className="flex flex-row justify-center items-center bg-[#02f053] rounded-xl p-3 gap-3">
+                    <Image src="/HNF-flag-black.png" width={45} height={20} alt="hnf flag black" className="" />
+                    <h1 className="text-black md:text-xl md:text-left text-center font-bold">Hack N Flag 2025 has ended! Thank you for participating!</h1>
+                </motion.div>
+            </div>
             <div className="flex lg:flex-row flex-col-reverse justify-center items-center min-h-svh lg:gap-10 lg:mt-0 mt-10 p-12">
                 <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} onAnimationComplete={() => setFirstAnimationDone(true)} className="flex flex-col lg:text-left text-center px-6">
                     <h1 className="lg:text-4xl md:text-3xl text-xl font-bold mb-5">Cybersecurity, gamified.</h1>
                     <h2 className="lg:text-2xl md:text-xl text-md text-gray-400">Gain hands on experience in key areas like web, forensics and pwn.</h2>
                     <h2 className="lg:text-2xl md:text-xl text-md text-gray-400 mt-2 mb-5">Plus a new HTB style boot2root infra hacking category.</h2>
                     <div initial={{ opacity: 0, y: 20 }} animate={{ opacity: firstAnimationDone ? 1 : 0, y: firstAnimationDone ? 0 : 20 }} transition={{ duration: 2.5 }}>
-                        <h2 className="lg:text-xl md:text-lg text-sm font-bold left-0 right-0">CTF ends in</h2>
                         <CountdownCard />
                         <div className="flex flex-row lg:justify-start justify-center mt-5 gap-5">
                             <motion.a target="blank" href="https://hnf25.nullsecsig.com" onHoverStart={() => setPlayButtonHover(true)} onHoverEnd={() => setPlayButtonHover(false)} className="flex flex-row gap-2 border-2 border-[#02f053] text-[#02f053] hover:text-black hover:bg-[#02f053] active:text-black active:bg-[#02f053] rounded-md md:text-xl text-lg w-fit px-6 py-2 cursor-pointer select-none">
