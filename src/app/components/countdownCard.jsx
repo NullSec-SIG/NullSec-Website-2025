@@ -12,14 +12,14 @@ export default function CountdownCard() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            const targetDate = new Date("2025-10-28T09:00:00.000");
+            const targetDate = new Date("2025-10-29T17:00:00.000");
             const currentDate = new Date();
             const difference = targetDate - currentDate;
 
-            const days = Math.floor(difference / (1000 * 60 * 60 * 24))
-            const hours = Math.floor(difference / (1000 * 60 * 60)) - Math.floor(days * 24)
-            const minutes = Math.floor(difference / (1000 * 60)) - Math.floor(days * 24 * 60) - Math.floor(hours * 60)
-            const seconds = Math.floor(difference / 1000) - Math.floor(days * 24 * 60 * 60) - Math.floor(hours * 60 * 60) - Math.floor(minutes * 60)
+            const days = difference < 0 ? 0 : Math.floor(difference / (1000 * 60 * 60 * 24))
+            const hours = difference < 0 ? 0 : Math.floor(difference / (1000 * 60 * 60)) - Math.floor(days * 24)
+            const minutes = difference < 0 ? 0 : Math.floor(difference / (1000 * 60)) - Math.floor(days * 24 * 60) - Math.floor(hours * 60)
+            const seconds = difference < 0 ? 0 : Math.floor(difference / 1000) - Math.floor(days * 24 * 60 * 60) - Math.floor(hours * 60 * 60) - Math.floor(minutes * 60)
 
             setTime({ days, hours, minutes, seconds });
         }, 1000);
