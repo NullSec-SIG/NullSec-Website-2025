@@ -49,8 +49,26 @@
         "image": "hnf.jpg",
         "date": "28-29 October 2025",
         "time": "9am - 5pm",
-        "status": "upcoming",
+        "status": "past",
         "location": "LT58C",
         "description": "Test your cybersecurity skills against your peers in NullSec's first flagship Capture the Flag (CTF) event!"
+    },
+    {
+        "name": "Infra Hacking",
+        "image": "infra_hacking.png",
+        "date": "12 November 2025",
+        "time": "9am - 5pm",
+        "status": "past",
+        "location": "27-07-08",
+        "description": "Learn about black box pentesting HTB style against Windows and Linux based machines!"
+    },
+    {
+        "name": "Intro to Cryptography",
+        "image": "crypto.png",
+        "date": "27 Nov 2025",
+        "time": "6pm - 8pm",
+        "location": "27-05-12",
+        "status": "past",
+        "description": "Learn how to keep information secure and confidential with our introductory Cryptography workshop!"
     }
 ]

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import CountdownCard from "../components/countdownCard";
 import { motion, steps, useMotionValueEvent, useScroll } from "motion/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function HNF2025Page() {
     const [isVisible, setIsVisible] = useState(true)
@@ -11,14 +11,26 @@ export default function HNF2025Page() {
     const [playButtonHover, setPlayButtonHover] = useState(false)
     const [firstAnimationDone, setFirstAnimationDone] = useState(false)
 
+    const [largeSize, setLargeSize] = useState(false);
+
     const { scrollY } = useScroll();
     useMotionValueEvent(scrollY, "change", (current => {
         return setIsVisible(current <= 400)
     }))
 
+    useEffect(() => {
+        const changeSize = () => {
+            setLargeSize(window.innerHeight >= 1000)
+            //setSuperSmallSize(window.innerHeight < 720)
+        }
+        changeSize();
+        window.addEventListener("resize", changeSize);
+        return () => window.removeEventListener("resize", changeSize);
+    }, [])
+
     return (
         <div className="flex flex-col">
-            <div className="flex justify-center items-center md:w-full md:mt-40 mt-26 md:mx-0 mx-3 absolute">
+            <div className={`flex justify-center items-center md:w-full ${largeSize ? "mt-40" : "md:mt-34 mt-26"} md:mx-0 mx-3 absolute`}>
                 <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: firstAnimationDone ? 1 : 0, y: firstAnimationDone ? 0 : 40 }} transition={{ duration: 1 }} className="flex flex-row justify-center items-center bg-[#02f053] rounded-xl p-3 gap-3">
                     <Image src="/HNF-flag-black.png" width={45} height={20} alt="hnf flag black" className="" />
                     <h1 className="text-black md:text-xl md:text-left text-center font-bold">Hack N Flag 2025 has ended! Thank you for participating!</h1>
@@ -42,7 +54,7 @@ export default function HNF2025Page() {
                                 }
                                 Play Now!
                             </motion.a>
-                            <a target="blank" href="https://forms.cloud.microsoft/r/mPrGngMKdi" className="border-2 text-[#28c6f9] border-[#28c6f9] hover:text-black hover:bg-[#28c6f9] active:text-black active:bg-[#28c6f9] rounded-md md:text-xl text-lg w-fit px-6 py-2 cursor-pointer select-none">
+                            <a target="blank" href="https://forms.cloud.microsoft/r/mPrGngMKdi" className="pointer-events-none opacity-45 border-2 text-[#28c6f9] border-[#28c6f9] hover:text-black hover:bg-[#28c6f9] active:text-black active:bg-[#28c6f9] rounded-md md:text-xl text-lg w-fit px-6 py-2 cursor-pointer select-none">
                                 Sign Up
                             </a>
                         </div>

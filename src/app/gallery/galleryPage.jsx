@@ -11,7 +11,8 @@ export default function GalleryPage() {
 
     const [dataFetched, setDataFetched] = useState(false);
     const [rawData, setRawData] = useState(null);
-    const [data, setData] = useState([]);
+    const [data, setData] = useState(null);
+    const [flattenedData, setFlattenedData] = useState([]);
 
     const [eventData, setEventData] = useState([]);
 
@@ -37,16 +38,27 @@ export default function GalleryPage() {
 
     useEffect(() => {
         const filterImages = async () => {
-           setData(rawData.filter(item => item.name === event))
+            setData(rawData.filter(item => item.name === event))
         }
         if (rawData) filterImages();
     }, [event])
+
+    useEffect(() => {
+        const flattenData = async () => {
+            let tempFlatData = []
+            data.map(item => item.photos.map(i => tempFlatData.push(`${item.id}/${i}`)))
+            setFlattenedData(tempFlatData.flat())
+        }
+        if (data) flattenData();
+    }, [event, data])
 
     const onDropdownChange = (option) => {
         setDataFetched(false)
         if (option.target.value === "0") return router.push("/gallery")
         return router.push(`/gallery?event=${option.target.value}`)
     }
+
+    console.log(flattenedData)
 
     return (
         <div className="flex flex-col items-center md:px-6 min-h-svh">
@@ -72,7 +84,7 @@ export default function GalleryPage() {
                 {
                     dataFetched && data.map(item => {
                         return item.photos.map(image => {
-                            return <GalleryCard key={image} fileName={`${item.id}/${image}`}/>
+                            return <GalleryCard key={image} fileName={`${item.id}/${image}`} data={flattenedData} />
                         })
                     })
                 }
