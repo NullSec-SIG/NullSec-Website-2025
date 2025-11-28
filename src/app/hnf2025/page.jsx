@@ -111,25 +111,25 @@ export default function HNF2025Page() {
                 <Image src="/Line 1.png" width={1081} height={1} alt="border" className="mt-20 mx-auto w-4/5" />
                 <h1 className="md:text-5xl text-3xl font-bold my-10">HOW TO PLAY</h1>
                 <motion.div initial={{ opacity: 0, y: -30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ amount: 0.2, once: true }} className="md:grid md:justify-items-center flex flex-col text-center w-full px-2 mb-10 gap-5" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))' }}>
-                    <div className="flex flex-col items-center md:border-1 rounded-2xl p-10 md:w-md gap-5">
+                    <div className="flex flex-col items-center md:border rounded-2xl p-10 md:w-md gap-5">
                         <h2 className="font-bold text-3xl">01</h2>
                         <Image src="/hnf-step1.png" width={766} height={530} alt="hnf-step1" className="md:h-[330px]" />
                         <p className="text-2xl font-bold">Solve Challenges</p>
                         <p className="text-center">Do as many as you can once the CTF starts</p>
                     </div>
-                    <div className="flex flex-col items-center md:border-1 rounded-2xl p-10 md:w-md gap-5">
+                    <div className="flex flex-col items-center md:border rounded-2xl p-10 md:w-md gap-5">
                         <h2 className="font-bold text-3xl">02</h2>
                         <Image src="/hnf-step2.png" width={766} height={530} alt="hnf-step2" className="md:h-[330px]" />
                         <p className="text-2xl font-bold">Get Flags</p>
                         <p className="text-center bottom-0">{"The challenge will automatically give you a flag enclosed with HNF25{} if you solved it"}</p>
                     </div>
-                    <div className="flex flex-col items-center md:border-1 rounded-2xl p-10 md:w-md gap-5">
+                    <div className="flex flex-col items-center md:border rounded-2xl p-10 md:w-md gap-5">
                         <h2 className="font-bold text-3xl">03</h2>
                         <Image src="/hnf-step3.png" width={766} height={530} alt="hnf-step3" className="md:h-[330px]" />
                         <p className="text-2xl font-bold">Submit Flags and Rate</p>
                         <p className="text-center bottom-0">Each solve is worth 1000 points, subject to a logarithmic decay to a minimum of 250 based on the number of other successful solves</p>
                     </div>
-                    <div className="flex flex-col items-center md:border-1 rounded-2xl p-10 md:w-md gap-5">
+                    <div className="flex flex-col items-center md:border rounded-2xl p-10 md:w-md gap-5">
                         <h2 className="font-bold text-3xl">04</h2>
                         <Image src="/hnf-step4.png" width={766} height={530} alt="hnf-step4" className="md:h-[330px]" />
                         <p className="text-2xl font-bold">Compete For the Top</p>

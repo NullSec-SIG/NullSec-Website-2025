@@ -10,12 +10,12 @@ export default function GalleryCard({ fileName, data }) {
 
     return (
         <div>
-            <motion.div className="w-[360px] h-[240px] rounded-2xl overflow-clip cursor-pointer relative" onClick={() => setShowIndividualCard(true)}>
+            <motion.div className="w-[360px] h-60 rounded-2xl overflow-clip cursor-pointer relative" onClick={() => setShowIndividualCard(true)}>
                 <Image src={`/events/${fileName}`} width={360} height={240} alt="image" />
             </motion.div>
             {
                 showIndividualCard && (
-                    <GalleryIndividualCard fileName={fileName} setShowIndividualCard={setShowIndividualCard} data={data}/>
+                    <GalleryIndividualCard fileName={fileName} showIndividualCard={showIndividualCard} setShowIndividualCard={setShowIndividualCard} data={data}/>
                 )
             }
         </div>
