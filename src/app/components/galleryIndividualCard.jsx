@@ -6,6 +6,8 @@ export default function GalleryIndividualCard({ fileName, showIndividualCard, se
 
     const [file, setFile] = useState(fileName)
     const [index, setIndex] = useState(data.indexOf(file))
+    
+    const [isLoading, setIsLoading] = useState(true)
 
     const changePicture = (direction) => {
         let newIndex;
@@ -18,6 +20,8 @@ export default function GalleryIndividualCard({ fileName, showIndividualCard, se
 
         setFile(data[newIndex])
         setIndex(newIndex)
+
+        setIsLoading(true)
     }
 
     return (
@@ -45,7 +49,7 @@ export default function GalleryIndividualCard({ fileName, showIndividualCard, se
                     </div>
                 </div>
                 <div className="max-w-[1600px] w-full flex justify-center items-center">
-                    <Image className="w-full" src={`/events/${file}`} width={720} height={480} sizes="100%" alt={file} onClick={(e) => e.stopPropagation()} />
+                    <Image key={file} className="w-full" src={`/events/${file}`} width={720} height={480} sizes="100%" alt={file} onClick={(e) => e.stopPropagation()} onLoad={() => setIsLoading(false)}/>
                 </div>
                 <div className="fixed right-0 z-50 w-1/20 flex justify-center items-center">
                     <div className="hover:bg-gray-600 active:bg-gray-700 p-4 rounded-lg cursor-pointer" onClick={(e) => { e.stopPropagation(); changePicture(1) }}>

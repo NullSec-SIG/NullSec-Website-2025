@@ -13,13 +13,14 @@
     },
     "dependencies": {
         "motion": "^12.23.24",
-        "next": "15.5.4",
+        "next": "^16.0.5",
         "react": "19.1.0",
         "react-dom": "19.1.0"
     },
     "devDependencies": {
         "@eslint/eslintrc": "^3",
         "@tailwindcss/postcss": "^4",
+        "baseline-browser-mapping": "^2.8.32",
         "eslint": "^9",
         "eslint-config-next": "15.5.4",
         "tailwindcss": "^4"
