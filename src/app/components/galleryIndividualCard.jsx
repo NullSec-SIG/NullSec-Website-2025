@@ -26,7 +26,7 @@ export default function GalleryIndividualCard({ fileName, showIndividualCard, se
 
     return (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 100 }} transition={{ duration: 0.5 }} className="fixed inset-0 z-50 flex flex-col items-center bg-black/80 select-none" onClick={() => setShowIndividualCard(false)}>
-            <div className="flex items-center top-0 w-full min-h-12 max-h-14 px-3 m-2" onClick={e => e.stopPropagation()}>
+            <div className="flex items-center top-0 w-full min-h-12 max-h-12 px-3 m-2" onClick={e => e.stopPropagation()}>
                 <a className="w-12 h-12 hover:bg-gray-600 active:bg-gray-700 rounded-lg flex justify-center items-center cursor-pointer" href={`/events/${file}`} download>
                     {/* Download button */}
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
@@ -41,15 +41,15 @@ export default function GalleryIndividualCard({ fileName, showIndividualCard, se
                     </svg>
                 </div>
             </div>
-            <div className="flex justify-center items-center h-full overflow-clip">
+            <div className="flex flex-row justify-center items-center h-full flex-1 min-h-0 overflow-clip">
                 <div className="fixed left-0 z-50 w-1/20 flex justify-center items-center">
                     <div className="hover:bg-gray-600 active:bg-gray-700 p-4 rounded-lg cursor-pointer" onClick={(e) => { e.stopPropagation(); changePicture(-1) }}>
                         {/* Left arrow button */}
                         <svg width="40" height="40" fill="" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.707 4.293a1 1 0 0 1 0 1.414L9.414 12l6.293 6.293a1 1 0 0 1-1.414 1.414l-7-7a1 1 0 0 1 0-1.414l7-7a1 1 0 0 1 1.414 0Z" fill="#ffffff" stroke="#ffffff" strokeWidth="2" /></svg>
                     </div>
                 </div>
-                <div className="max-w-[1600px] w-full flex justify-center items-center">
-                    <Image key={file} className="w-full" src={`/events/${file}`} width={720} height={480} sizes="100%" alt={file} onClick={(e) => e.stopPropagation()} onLoad={() => setIsLoading(false)}/>
+                <div className="max-w-[1600px] w-full h-full flex justify-center items-center">
+                    <Image key={file} className="w-full h-full object-contain" src={`/events/${file}`} width={720} height={480} sizes="100%" alt={file} onClick={(e) => e.stopPropagation()} onLoad={() => setIsLoading(false)}/>
                 </div>
                 <div className="fixed right-0 z-50 w-1/20 flex justify-center items-center">
                     <div className="hover:bg-gray-600 active:bg-gray-700 p-4 rounded-lg cursor-pointer" onClick={(e) => { e.stopPropagation(); changePicture(1) }}>
