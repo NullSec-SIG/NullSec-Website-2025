@@ -58,15 +58,13 @@ export default function GalleryPage() {
         return router.push(`/gallery?event=${option.target.value}`)
     }
 
-    console.log(flattenedData)
-
     return (
         <div className="flex flex-col items-center md:px-6 min-h-svh">
             <h1 className="text-4xl mt-36 mb-10 font-[IBMPlexSans] font-bold">GALLERY</h1>
             <div className="flex flex-row items-center md:w-4/5 whitespace-pre">
                 <h3 className="md:text-2xl text-lg">WORKSHOP: </h3>
                 <div className="relative md:text-lg text-sm">
-                    <select onChange={(e) => onDropdownChange(e)} value={event ?? ""} className="bg-white text-black border-1 rounded-sm px-3 py-1 mr-3">
+                    <select onChange={(e) => onDropdownChange(e)} value={event ?? ""} className="bg-white text-black border rounded-sm px-3 py-1 mr-3">
                         <option value={0}>Select workshop...</option>
                         {
                             eventData.map((item, i) => {
