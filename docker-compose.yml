@@ -4,4 +4,6 @@ services:
       container_name: nullsec-website-service
       ports:
       - 3000:3000
+      volumes:
+        - ../NullSec-Admin-Panel/website-data/events:/home/website-user/NullSec-Website-2025/website-data/events
       restart: always
