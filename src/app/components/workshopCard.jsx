@@ -7,12 +7,11 @@ import { useRouter } from "next/navigation";
 
 export default function WorkshopCard({ name, image, date, time, status, description, location }) {
     const [hover, setHover] = useState(false)
-    const [hasAnimated, setHasAnimated] = useState(false)
     const router = useRouter();
 
     return (
         <motion.div initial={{ opacity: 0, y: -40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ amount: 0.6, once: true }} onHoverStart={() => setHover(true)} onHoverEnd={() => setHover(false)} onClick={() => setHover(!hover)} className="md:min-w-[384px] md:max-w-[384px] h-[480px] w-4/5 rounded-2xl overflow-clip cursor-pointer relative">
-            <motion.img src={`/events/${image}`} width={384} height={512} alt={name} initial={{ filter: "blur(0px)" }} animate={{ filter: hover ? "blur(6px)" : "blur(0px)" }} className="absolute rounded-2xl" />
+            <motion.img src={`/api/eventPhoto?photo=${image}`} width={384} height={512} alt={name} initial={{ filter: "blur(0px)" }} animate={{ filter: hover ? "blur(6px)" : "blur(0px)" }} className="absolute rounded-2xl" />
             <div className="absolute min-h-1/2 w-full flex justify-center items-center">
                 <motion.button initial={{ visibility: "hidden", opacity: 0 }} animate={{ visibility: hover ? "visible" : "hidden", opacity: hover ? 1 : 0 }} className="bg-[#101010] p-4 rounded-lg border cursor-pointer" id="galleryButton" type="button" onClick={e => {e.stopPropagation(); router.push(`/gallery?event=${image.split(".")[0]}`)}}>
                     OPEN IN GALLERY

@@ -1,59 +1,43 @@
 "use client"
 
 import { useRouter, useSearchParams } from "next/navigation"
-import { useEffect, useState } from "react";
-import GalleryCard from "../components/galleryCard";
+import React, { use, useEffect, useMemo, useState } from "react";
+import GalleryCard from "@/app/components/galleryCard";
 
 export default function GalleryPage() {
     const searchParams = useSearchParams();
     const event = searchParams.get("event")
     const router = useRouter();
 
-    const [dataFetched, setDataFetched] = useState(false);
-    const [rawData, setRawData] = useState(null);
     const [data, setData] = useState(null);
-    const [flattenedData, setFlattenedData] = useState([]);
-
-    const [eventData, setEventData] = useState([]);
-
-    useEffect(() => {
-        const getEventNames = async () => {
-            const response = await fetch("/events/events.json")
-            const events = await response.json();
-            setEventData(events)
-        }
-        if (!dataFetched) getEventNames();
-    }, [])
+    const [eventsData, setEventsData] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
+            const eventsResponse = await fetch("/api/events");
+            const eventsResponseData = await eventsResponse.json();
+            setEventsData(eventsResponseData.data);
+        }
+        fetchData();
+    }, [])
+
+    useEffect(() => {
+        const retrievePhotos = async () => {
             const response = await fetch(`/api/photos${event ? "?event=" + event : ""}`)
             const eventData = await response.json();
-            setRawData(eventData.data)
             setData(eventData.data)
-            setDataFetched(true)
         }
-        if (!dataFetched) fetchData();
+        retrievePhotos();
     }, [event])
 
-    useEffect(() => {
-        const filterImages = async () => {
-            setData(rawData.filter(item => item.name === event))
-        }
-        if (rawData) filterImages();
-    }, [event])
-
-    useEffect(() => {
-        const flattenData = async () => {
-            let tempFlatData = []
-            data.map(item => item.photos.map(i => tempFlatData.push(`${item.id}/${i}`)))
-            setFlattenedData(tempFlatData.flat())
-        }
-        if (data) flattenData();
-    }, [event, data])
+    const flattenedData = useMemo(() => {
+        if (!data) return []
+        let tempFlatData = []
+        data.forEach(item => item.photos.forEach(i => tempFlatData.push(`${item.id}/${i}`)))
+        return tempFlatData.flat()
+    }, [data])
 
     const onDropdownChange = (option) => {
-        setDataFetched(false)
         if (option.target.value === "0") return router.push("/gallery")
         return router.push(`/gallery?event=${option.target.value}`)
     }
@@ -66,8 +50,8 @@ export default function GalleryPage() {
                 <div className="relative md:text-lg text-sm">
                     <select onChange={(e) => onDropdownChange(e)} value={event ?? ""} className="bg-white text-black border rounded-sm px-3 py-1 mr-3">
                         <option value={0}>Select workshop...</option>
-                        {
-                            eventData.map((item, i) => {
+                        {eventsData &&
+                            eventsData.map((item, i) => {
                                 const id = item.image.split(".")[0]
                                 return <option key={id} value={id}>{item.name}</option>
                             })
@@ -77,7 +61,7 @@ export default function GalleryPage() {
             </div>
             <div className="md:w-4/5 grid md:justify-items-start justify-items-center gap-10 mt-10 mb-10" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))' }}>
                 {
-                    dataFetched && data.map(item => {
+                    data && data.map(item => {
                         return item.photos.map(image => {
                             return <GalleryCard key={image} fileName={`${item.id}/${image}`} data={flattenedData} />
                         })

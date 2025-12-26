@@ -70,7 +70,7 @@ export default function HNF2025Page() {
                 <p className="lg:text-lg md:text-lg text-sm text-gray-400">SCROLL FOR MORE DETAILS</p>
             </motion.div>
 
-            <Image src="/Line 1.png" width={1081} height={1} alt="border" className="mt-20 mx-auto w-4/5" />
+            <Image src="/Line 1.png" width={1081} height={1} alt="border" className="mt-20 mx-auto w-4/5 select-none" />
 
             <div className="flex flex-col items-center mt-10 px-4 min-h-svh">
                 <h1 className="md:text-5xl text-3xl font-bold mb-10">DETAILS</h1>
@@ -108,7 +108,7 @@ export default function HNF2025Page() {
                     <h2 className="md:text-2xl text-md font-bold md:text-right text-center">Categories</h2>
                     <h2 className="md:text-2xl text-md md:text-left text-center">NP Students, Open</h2>
                 </motion.div>
-                <Image src="/Line 1.png" width={1081} height={1} alt="border" className="mt-20 mx-auto w-4/5" />
+                <Image src="/Line 1.png" width={1081} height={1} alt="border" className="mt-20 mx-auto w-4/5 select-none" />
                 <h1 className="md:text-5xl text-3xl font-bold my-10">HOW TO PLAY</h1>
                 <motion.div initial={{ opacity: 0, y: -30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ amount: 0.2, once: true }} className="md:grid md:justify-items-center flex flex-col text-center w-full px-2 mb-10 gap-5" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))' }}>
                     <div className="flex flex-col items-center md:border rounded-2xl p-10 md:w-md gap-5">

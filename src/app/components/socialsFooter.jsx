@@ -6,7 +6,7 @@ import { motion } from "motion/react"
 export default function SocialsFooter() {
     return (
         <div className="flex flex-col items-center mb-15 gap-10">
-            <Image src="/Line 1.png" width={1081} height={1} alt="border" className="mx-auto w-4/5" />
+            <Image src="/Line 1.png" width={1081} height={1} alt="border" className="mx-auto w-4/5 select-none" />
             <h1 className="md:text-5xl text-3xl font-bold font-[IBMPlexSans]">FIND US ONLINE!</h1>
             <div className="flex md:flex-row flex-col px-6 md:gap-14 gap-11 w-full">
                 <div className="flex flex-col justify-end md:items-end items-center gap-11 flex-wrap md:w-1/2 w-full">
