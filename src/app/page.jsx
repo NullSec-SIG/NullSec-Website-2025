@@ -51,7 +51,7 @@ export default function Home() {
     }))
 
     const [rawWorkshops, setRawWorkshops] = useState(null);
-    const [workshops, setWorkshops] = useState([]);
+    const [workshops, setWorkshops] = useState(null);
 
     const [largeSize, setLargeSize] = useState(false);
     const [superSmallSize, setSuperSmallSize] = useState(false);
@@ -60,12 +60,12 @@ export default function Home() {
 
     useEffect(() => {
         const fetchData = () => {
-            fetch("/events/events.json")
+            fetch("/api/events")
                 .then(response => response.json())
                 .then(result => {
-                    result.reverse()
-                    setRawWorkshops(result)
-                    setWorkshops(result)
+                    result.data.reverse()
+                    setRawWorkshops(result.data)
+                    setWorkshops(result.data)
                 })
         }
         if (!rawWorkshops) fetchData()
@@ -123,7 +123,7 @@ export default function Home() {
                 </motion.div>
             </div>
 
-            <Image src="/Line 1.png" width={1081} height={1} alt="border" className="mt-20 mx-auto w-4/5" />
+            <Image src="/Line 1.png" width={1081} height={1} alt="border" className="mt-20 mx-auto w-4/5 select-none" />
 
             <div className="flex flex-col items-center min-h-svh mt-10 gap-10">
                 <h1 className="font-bold font-[IBMPlexSans] md:text-5xl text-3xl">EVENTS</h1>

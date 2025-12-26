@@ -4,6 +4,7 @@ import Image from "next/image"
 import { usePathname, useRouter } from "next/navigation"
 import { motion } from "motion/react"
 import { useEffect, useState } from "react"
+import Link from "next/link"
 
 export default function Navbar() {
     const router = useRouter()
@@ -22,7 +23,7 @@ export default function Navbar() {
             <motion.div initial={{ opacity: 0, y: -30 }} animate={{ opacity: 1, y: 0 }} className="fixed w-full max-h-[10vh] z-50">
                 <div className="lg:m-5 md:m-5 m-3 flex flex-row justify-between items-center bg-white/10 rounded-2xl drop-shadow-2xl backdrop-blur-sm p-5">
                     {isWide ? (
-                        <Image src="/Home Logo.svg" width={180} height={36} alt="logo" className="cursor-pointer hover:fill-gray-400 md:w-[180px] md:h-[36px] w-[120px] h-[24px]" onClick={() => router.push("/")} />
+                        <Link href="/"><Image src="/Home Logo.svg" width={180} height={36} alt="logo" className="cursor-pointer hover:fill-gray-400 md:w-[180px] md:h-[36px] w-[120px] h-[24px] select-none" /></Link>
                     ) : (
                         <svg width="28" height="41" viewBox="0 0 54 79" fill="none" xmlns="http://www.w3.org/2000/svg" className="cursor-pointer" onClick={() => router.push("/")}>
                             <g clipPath="url(#clip0_79_56)">
@@ -49,9 +50,9 @@ export default function Navbar() {
                         </svg>
                     )}
                     <div className="flex flex-row items-center text-center gap-8 pr-3">
-                        <div className={`cursor-pointer ${pathname === "/hnf2025" ? "text-white font-bold" : "text-gray-300"} hover:text-gray-100 active:text-gray-400 select-none`} onClick={() => router.push("/hnf2025")}>{`${isWide ? "HACK N FLAG" : "HNF"}`}</div>
-                        <div className={`cursor-pointer ${pathname === "/gallery" ? "text-white font-bold" : "text-gray-300"} hover:text-gray-100 active:text-gray-400 select-none`} onClick={() => router.push("/gallery")}>GALLERY</div>
-                        <div className={`cursor-pointer ${pathname === "/about" ? "text-white font-bold" : "text-gray-300"} hover:text-gray-100 active:text-gray-400 select-none`} onClick={() => router.push("/about")}>ABOUT</div>
+                        <Link href="/hnf2025" className={`cursor-pointer ${pathname === "/hnf2025" ? "text-white font-bold" : "text-gray-300"} hover:text-gray-100 active:text-gray-400 select-none`}>{`${isWide ? "HACK N FLAG" : "HNF"}`}</Link>
+                        <Link href="/gallery" className={`cursor-pointer ${pathname === "/gallery" ? "text-white font-bold" : "text-gray-300"} hover:text-gray-100 active:text-gray-400 select-none`}>GALLERY</Link>
+                        <Link href="/about" className={`cursor-pointer ${pathname === "/about" ? "text-white font-bold" : "text-gray-300"} hover:text-gray-100 active:text-gray-400 select-none`}>ABOUT</Link>
                     </div>
                 </div>
             </motion.div>

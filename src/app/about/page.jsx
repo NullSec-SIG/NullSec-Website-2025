@@ -21,7 +21,7 @@ export default function AboutPage() {
                 <Image src="/IMG_5617-Enhanced-NRe.jpg" width={6000} height={4000} alt="about us" className="lg:w-[40vw] w-2xl" />
                 <p className={`text-xl font-[IBMPlexSans] ${isTall ? "my-10" : "mt-5 mb-5"} md:text-center md:w-3/5`}>We are a community of cybersecurity enthusiasts united by a shared passion for learning and innovation. Our mission is to foster knowledge sharing, skill development, and collaboration through a range of engaging activities and initiatives within the cybersecurity field.</p>
             </div>
-            <Image src="/Line 1.png" width={1081} height={1} alt="border" className="bottom-0 mx-auto w-4/5"/>
+            <Image src="/Line 1.png" width={1081} height={1} alt="border" className="bottom-0 mx-auto w-4/5 select-none"/>
             <div className="flex flex-col items-center min-h-svh mt-10 mb-10">
                 <h1 className="font-[IBMPlexSans] text-4xl font-bold mb-10">MEET THE TEAM</h1>
                 <div className="flex flex-col w-4/5 gap-10">

@@ -2,7 +2,7 @@ import { promises as fs } from "fs";
 import { NextResponse } from "next/server";
 
 export async function GET(req, { params }) {
-    let json = JSON.parse(await fs.readFile(process.cwd() + "/public/events/events.json"))
+    let json = JSON.parse(await fs.readFile(process.cwd() + "/website-data/events/events.json"))
 
     const event = req.nextUrl.searchParams.get("event")
 
@@ -11,7 +11,7 @@ export async function GET(req, { params }) {
     let response = [];
     
     for (var workshop of json) {
-        const files = await fs.readdir(process.cwd() + `/public/events/${workshop.image.split(".")[0]}`)
+        const files = await fs.readdir(process.cwd() + `/website-data/events/${workshop.image.split(".")[0]}`)
 
         let photoList = {
             name: workshop.name,
