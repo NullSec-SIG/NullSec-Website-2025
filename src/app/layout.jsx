@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
                     <div className="flex flex-row gap-5">
                         <Image src="/Logomark 1.svg" width={54} height={78} alt="footer logo" />
                         <div className="flex flex-col justify-center">
-                            <p>© 2025, NullSec</p>
+                            <p>© 2026, NullSec</p>
                             <p>All Rights Reserved</p>
                         </div>
                     </div>
