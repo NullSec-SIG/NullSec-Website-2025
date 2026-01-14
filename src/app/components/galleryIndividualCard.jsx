@@ -49,7 +49,7 @@ export default function GalleryIndividualCard({ fileName, showIndividualCard, se
                     </div>
                 </div>
                 <div className="max-w-[1600px] w-full h-full flex justify-center items-center">
-                    <Image key={file} className="w-full h-full object-contain" src={`/events/${file}`} width={720} height={480} sizes="100%" alt={file} onClick={(e) => e.stopPropagation()} onLoad={() => setIsLoading(false)}/>
+                    <Image key={file} className="w-full h-full object-contain" src={`/api/galleryPhoto/${file}`} width={720} height={480} sizes="100%" alt={file} onClick={(e) => e.stopPropagation()} onLoad={() => setIsLoading(false)}/>
                 </div>
                 <div className="fixed right-0 z-50 w-1/20 flex justify-center items-center">
                     <div className="hover:bg-gray-600 active:bg-gray-700 p-4 rounded-lg cursor-pointer" onClick={(e) => { e.stopPropagation(); changePicture(1) }}>
