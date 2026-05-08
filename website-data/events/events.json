@@ -70,5 +70,32 @@
         "location": "27-05-12",
         "status": "past",
         "description": "Learn how to keep information secure and confidential with our introductory Cryptography workshop!"
+    },
+    {
+        "name": "Intro To Reverse Engineering",
+        "image": "rev.jpg",
+        "date": "8 Jan 2026",
+        "time": "6pm - 8pm",
+        "location": "LT76",
+        "status": "past",
+        "description": "Learn more about Reverse Engineering and CTF skills in Rev"
+    },
+    {
+        "name": "Game Hacking 101",
+        "image": "gamepwn.jpg",
+        "date": "14 Jan 2026",
+        "time": "9am - 5pm",
+        "location": "LT79",
+        "status": "past",
+        "description": "Learn more about Memory Hacking and Assembly Basics as well as Scripting"
+    },
+    {
+        "name": "Welcome Party 2026",
+        "image": "welcomeparty26.png",
+        "date": "7 May 2026",
+        "time": "6pm - 9pm",
+        "location": "Grasspatch",
+        "status": "upcoming",
+        "description": "Our annual welcome party"
     }
 ]
