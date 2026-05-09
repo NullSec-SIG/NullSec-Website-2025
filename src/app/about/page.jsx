@@ -26,24 +26,29 @@ export default function AboutPage() {
                 <h1 className="font-[IBMPlexSans] text-4xl font-bold mb-10">MEET THE TEAM</h1>
                 <div className="flex flex-col w-4/5 gap-10">
                     <div className="flex flex-row justify-center items-center gap-15 flex-wrap">
-                        <TeamCard name="RAVIN NAGPAL" role="President" picture="/team/Ravin.jpg" description="Ravin oversees general operations, with a particular focus on the publicity side of things. He is an avid fan of OSINT and steganography." />
-                        <TeamCard name="DAKSH THAPAR" role="Vice-President" picture="/team/Daksh.jpg" description="Daksh oversees general operations, with a particular focus on the technical side of things. He also has a keen interest in programming, scripting and software engineering." />
+                        <TeamCard name="Tan Jun Yu Rian" role="President" picture="" description="" />
+                        <TeamCard name="Aathithya Jegatheesan" role="Vice-President" picture="" description="" />
                     </div>
                     <div className="flex flex-row justify-center items-center gap-15 flex-wrap">
-                        <TeamCard name="TAN CHIN RAY" role="Head of Technology" picture="/team/Chin Ray.png" description="Chin Ray administers NullSec's servers, software and other digital infrastructure. He also helps coordinate content for NullSec's workshops and events." />
-                        <TeamCard name="TAN JUN WEI" role="Tech EXCO" picture="/team/Jun Wei.jpg" description="Jun Wei works on the ideation and creation of content, including slides, materials and challenges. He has created the most CTF challenges individually in both YCEP 2025 and HNF 2025." />
-                        <TeamCard name="DAMIAN KOH" role="Tech EXCO" picture="/team/Damian.jpg" description="Damian works on the ideation and creation of content, including slides, materials and challenges. He has great experience administering SIEM systems and web app penetration testing." />
+                        <TeamCard name="Lim Yi Ren Eben" role="Head of Technology" picture="" description="" />
+                        <TeamCard name="Li Yanjie James" role="Tech EXCO" picture="" description="" />
+                        <TeamCard name="Guan Jiahong" role="Tech EXCO" picture="" description="" />
+                        <TeamCard name="Koh Zihao Alexander" role="Tech EXCO" picture="" description="" />
+                        <TeamCard name="Sean Ulric Buguina Chua" role="Tech EXCO" picture="" description="" />
                     </div>
                     <div className="flex flex-row justify-center items-center gap-15 flex-wrap">
-                        <TeamCard name="QUAN YU" role="Head of SecOps" picture="/team/Quan Yu.jpg" description="Quan Yu coordinates NullSec's administrative tasks, including room booking, form creation and logistics. She came in clutch during the Kali workshop, successfully booking LT79 within a day's notice." />
-                        <TeamCard name="RYAN TAN" role="SecOps EXCO" picture="/team/Ryan Tan.jpg" description="Ryan Tan mainly handles logistics and administrative matters, but also assisted in executing the OSINT workshop and challenge creation. He makes sure that you're never solving his OSINT challenges." />
-                        <TeamCard name="RYAN LOW" role="SecOps EXCO" picture="/team/Ryan Low.jpg" description="Ryan Low is a Tech turned SecOps EXCO who now handles logistics and administrative matters. Being highly involved in GIAC, he has experience in system hacking, and is currently exploring AI." />
+                        <TeamCard name="Chay Yu Hung Tristan" role="Head of SecOps" picture="" description="" />
+                        <TeamCard name="Bellam Nandakumar Aravind" role="SecOps EXCO" picture="" description="" />
+                        <TeamCard name="Chee Wen Yong" role="SecOps EXCO" picture="" description="" />
+                        <TeamCard name="Poon Kar Ngai Lucas" role="SecOps EXCO" picture="" description="" />
+                        <TeamCard name="Darius Tan Kaifeng" role="SecOps EXCO" picture="" description="" />
                     </div>
                     <div className="flex flex-row justify-center items-center gap-15 flex-wrap">
-                        <TeamCard name="ALOYSIUS LUKE TAY SHI YUAN" role="Head of Publicity" picture="/team/Aloysius.jpg" description="Aloysius coordinates NullSec's publicity and administers NullSec's Instagram. He has an eye for the latest trends in social media which he uses for our reel production." />
-                        <TeamCard name="RYAN WEE WEI YAN" role="Publicity EXCO" picture="/team/Ryan Wee.jpg" description="Ryan helps with the designing of publicity materials, including posters, stickers, and even this website. He also loves cybersecurity and plays the occasional CTF in his free time." />
-                        <TeamCard name="POOK XUAN TONG" role="Publicity EXCO" picture="/team/Xuan Tong.jpg" description="Xuan Tong develops creative visuals for publicity, combining design skills and ideas to engage audiences and share content. She also has experience across a broad range of design work." />
-                        <TeamCard name="KOH BOCK CHOW" role="Photographer" picture="/team/Bock Chow.jpg" description="Bock Chow captures and records eventful moments for publicity by combining communication and photography skills. He also has experience as a photographer in multiple events." />
+                        <TeamCard name="Muhammad Harris Sufyan Bin Azhari" role="Head of Publicity" picture="" description="" />
+                        <TeamCard name="Ng Jing Zhong" role="Publicity EXCO" picture="" description="" />
+                        <TeamCard name="Caden Anthony Fay Teng Aik" role="Publicity EXCO" picture="" description="" />
+                        <TeamCard name="Tan Hai Ye, Seraphim" role="Publicity EXCO" picture="" description="" />
+                        <TeamCard name="Jayden Ng Kwan Zi" role="Publicity EXCO" picture="" description="" />
                     </div>
                 </div>
             </div>
