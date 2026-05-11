@@ -26,29 +26,29 @@ export default function AboutPage() {
                 <h1 className="font-[IBMPlexSans] text-4xl font-bold mb-10">MEET THE TEAM</h1>
                 <div className="flex flex-col w-4/5 gap-10">
                     <div className="flex flex-row justify-center items-center gap-15 flex-wrap">
-                        <TeamCard name="Tan Jun Yu Rian" role="President" picture="" description="" />
-                        <TeamCard name="Aathithya Jegatheesan" role="Vice-President" picture="" description="" />
+                        <TeamCard name="Tan Jun Yu Rian" role="President" picture="/team/Rian.jpg" description="" />
+                        <TeamCard name="Aathithya Jegatheesan" role="Vice-President" picture="/team/Aathithya.jpg" description="" />
                     </div>
                     <div className="flex flex-row justify-center items-center gap-15 flex-wrap">
-                        <TeamCard name="Lim Yi Ren Eben" role="Head of Technology" picture="" description="" />
-                        <TeamCard name="Li Yanjie James" role="Tech EXCO" picture="" description="" />
-                        <TeamCard name="Guan Jiahong" role="Tech EXCO" picture="" description="" />
-                        <TeamCard name="Koh Zihao Alexander" role="Tech EXCO" picture="" description="" />
-                        <TeamCard name="Sean Ulric Buguina Chua" role="Tech EXCO" picture="" description="" />
+                        <TeamCard name="Lim Yi Ren Eben" role="Head of Technology" picture="/team/Eben.jpg" description="" />
+                        <TeamCard name="Li Yanjie James" role="Tech EXCO" picture="/team/James.jpg" description="" />
+                        <TeamCard name="Guan Jiahong" role="Tech EXCO" picture="/team/JiaHong.jpg" description="" />
+                        <TeamCard name="Koh Zihao Alexander" role="Tech EXCO" picture="/team/Alex.jpg" description="" />
+                        <TeamCard name="Sean Ulric Buguina Chua" role="Tech EXCO" picture="/team/Sean.jpg" description="" />
                     </div>
                     <div className="flex flex-row justify-center items-center gap-15 flex-wrap">
-                        <TeamCard name="Chay Yu Hung Tristan" role="Head of SecOps" picture="" description="" />
-                        <TeamCard name="Bellam Nandakumar Aravind" role="SecOps EXCO" picture="" description="" />
-                        <TeamCard name="Chee Wen Yong" role="SecOps EXCO" picture="" description="" />
-                        <TeamCard name="Poon Kar Ngai Lucas" role="SecOps EXCO" picture="" description="" />
-                        <TeamCard name="Darius Tan Kaifeng" role="SecOps EXCO" picture="" description="" />
+                        <TeamCard name="Chay Yu Hung Tristan" role="Head of SecOps" picture="/team/Tristan.jpg" description="" />
+                        <TeamCard name="Bellam Nandakumar Aravind" role="SecOps EXCO" picture="/team/Aravind.jpg" description="" />
+                        <TeamCard name="Chee Wen Yong" role="SecOps EXCO" picture="/team/WenYong.jpg" description="" />
+                        <TeamCard name="Poon Kar Ngai Lucas" role="SecOps EXCO" picture="/team/Lucas.jpg" description="" />
+                        <TeamCard name="Darius Tan Kaifeng" role="SecOps EXCO" picture="/team/Darius.jpg" description="" />
                     </div>
                     <div className="flex flex-row justify-center items-center gap-15 flex-wrap">
-                        <TeamCard name="Muhammad Harris Sufyan Bin Azhari" role="Head of Publicity" picture="" description="" />
-                        <TeamCard name="Ng Jing Zhong" role="Publicity EXCO" picture="" description="" />
-                        <TeamCard name="Caden Anthony Fay Teng Aik" role="Publicity EXCO" picture="" description="" />
-                        <TeamCard name="Tan Hai Ye, Seraphim" role="Publicity EXCO" picture="" description="" />
-                        <TeamCard name="Jayden Ng Kwan Zi" role="Publicity EXCO" picture="" description="" />
+                        <TeamCard name="Muhammad Harris Sufyan Bin Azhari" role="Head of Publicity" picture="/team/Harris.jpg" description="" />
+                        <TeamCard name="Ng Jing Zhong" role="Publicity EXCO" picture="/team/JingZhong.jpg" description="" />
+                        <TeamCard name="Caden Anthony Fay Teng Aik" role="Publicity EXCO" picture="/team/Caden.jpg" description="" />
+                        <TeamCard name="Tan Hai Ye, Seraphim" role="Publicity EXCO" picture="/team/Seraphim_2.jpg" description="" />
+                        <TeamCard name="Jayden Ng Kwan Zi" role="Publicity EXCO" picture="/team/Jayden_2.jpg" description="" />
                     </div>
                 </div>
             </div>
