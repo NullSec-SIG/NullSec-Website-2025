@@ -60,12 +60,12 @@ export default function Home() {
 
     useEffect(() => {
         const fetchData = () => {
-            fetch("/api/events")
+            fetch("/events/events.json")
                 .then(response => response.json())
                 .then(result => {
-                    result.data.reverse()
-                    setRawWorkshops(result.data)
-                    setWorkshops(result.data)
+                    const data = [...result].reverse()
+                    setRawWorkshops(data)
+                    setWorkshops(data)
                 })
         }
         if (!rawWorkshops) fetchData()

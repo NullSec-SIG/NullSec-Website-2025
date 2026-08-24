@@ -14,18 +14,18 @@ export default function GalleryPage() {
 
     useEffect(() => {
         const fetchData = async () => {
-            const eventsResponse = await fetch("/api/events");
+            const eventsResponse = await fetch("/events/events.json");
             const eventsResponseData = await eventsResponse.json();
-            setEventsData(eventsResponseData.data);
+            setEventsData(eventsResponseData);
         }
         fetchData();
     }, [])
 
     useEffect(() => {
         const retrievePhotos = async () => {
-            const response = await fetch(`/api/photos${event ? "?event=" + event : ""}`)
+            const response = await fetch("/events/photos.json")
             const eventData = await response.json();
-            setData(eventData.data)
+            setData(event ? eventData.filter(item => item.id === event) : eventData)
         }
         retrievePhotos();
     }, [event])
