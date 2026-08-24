@@ -50,7 +50,7 @@ export default function Navbar() {
                         </svg>
                     )}
                     <div className="flex flex-row items-center text-center gap-8 pr-3">
-                        <Link href="/hnf2025" className={`cursor-pointer ${pathname === "/hnf2025" ? "text-white font-bold" : "text-gray-300"} hover:text-gray-100 active:text-gray-400 select-none`}>{`${isWide ? "HACK N FLAG" : "HNF"}`}</Link>
+                        <Link href="/hnf26" className={`cursor-pointer ${pathname === "/hnf26" ? "text-white font-bold" : "text-gray-300"} hover:text-gray-100 active:text-gray-400 select-none`}>{`${isWide ? "HACK N FLAG" : "HNF"}`}</Link>
                         <Link href="/gallery" className={`cursor-pointer ${pathname === "/gallery" ? "text-white font-bold" : "text-gray-300"} hover:text-gray-100 active:text-gray-400 select-none`}>GALLERY</Link>
                         <Link href="/about" className={`cursor-pointer ${pathname === "/about" ? "text-white font-bold" : "text-gray-300"} hover:text-gray-100 active:text-gray-400 select-none`}>ABOUT</Link>
                     </div>

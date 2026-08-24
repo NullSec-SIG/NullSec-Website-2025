@@ -12,7 +12,7 @@ export default function CountdownCard() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            const targetDate = new Date("2025-10-29T17:00:00.000");
+            const targetDate = new Date("2026-11-05T09:00:00.000");
             const currentDate = new Date();
             const difference = targetDate - currentDate;
 
